@@ -38,7 +38,6 @@ async function loadStudyNotes() {
       else { download.href = `${title.href}&download=1`; }
       actions.append(view, download); row.append(actions); list.append(row);
     }
-    $('#study-count').textContent = `${studyNotes.length} notes · ${studyNotes.reduce((sum, n) => sum + n.pages, 0)} pages`;
     status.hidden = true;
   } catch {
     status.replaceChildren(document.createTextNode('The notes could not load. '));
