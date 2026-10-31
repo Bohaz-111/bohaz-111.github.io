@@ -2,12 +2,10 @@
 const $ = (selector) => document.querySelector(selector);
 const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts', cv: 'CV' };
 $('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
-$('#contact-dialog').setAttribute('aria-labelledby', 'contact-dialog-title');
 const storageKey = 'notes-and-music.v1';
 let state = { notes: [], contacts: [] };
 try { const stored = JSON.parse(localStorage.getItem(storageKey)); if (stored && Array.isArray(stored.notes) && Array.isArray(stored.contacts)) state = stored; } catch {}
 let selectedNote = state.notes[0]?.id || null;
-let editingContact = null;
 let undo = null;
 let toastTimer;
 let studyNotes = [];
@@ -22,10 +20,8 @@ function route() {
   const current = Object.hasOwn(labels, requested) ? requested : 'home';
   document.querySelectorAll('.page').forEach(page => page.hidden = page.id !== current);
   document.querySelectorAll('.nav-item').forEach(link => { const active = link.hash === `#${current}`; link.classList.toggle('active', active); if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
-  $('#current-section').textContent = labels[current];
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
   if (current === 'notes') renderNotes();
-  if (current === 'contacts') renderContacts();
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 function element(tag, className, text) { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; }
@@ -92,40 +88,10 @@ function newNote() { const note = { id: uid(), title: '', body: '', updated: Dat
 $('#new-note').addEventListener('click', newNote); $('#first-note').addEventListener('click', newNote);
 for (const field of ['title', 'body']) $(`#note-${field}`).addEventListener('input', () => { const note = state.notes.find(n => n.id === selectedNote); if (!note) return; note[field] = $(`#note-${field}`).value; note.updated = Date.now(); save(); renderNoteList(); });
 $('#delete-note').addEventListener('click', () => { const index = state.notes.findIndex(n => n.id === selectedNote); if (index < 0) return; const [removed] = state.notes.splice(index, 1); selectedNote = state.notes[0]?.id || null; save(); renderNotes(); notify('Note deleted', () => { state.notes.splice(index, 0, removed); selectedNote = removed.id; save(); renderNotes(); }); });
-function openContact(contact = null) {
-  editingContact = contact?.id || null;
-  $('#contact-dialog-title').textContent = contact ? 'Edit contact' : 'Add a contact';
-  $('#contact-name').value = contact?.name || ''; $('#contact-email').value = contact?.email || ''; $('#contact-detail').value = contact?.detail || '';
-  $('#contact-dialog').showModal(); $('#contact-name').focus();
-}
-$('#new-contact').addEventListener('click', () => openContact()); $('#first-contact').addEventListener('click', () => openContact());
-$('#close-dialog').addEventListener('click', () => $('#contact-dialog').close()); $('#cancel-contact').addEventListener('click', () => $('#contact-dialog').close());
-$('#contact-form').addEventListener('submit', event => {
-  event.preventDefault(); const name = $('#contact-name').value.trim(); if (!name) { $('#contact-name').setCustomValidity('Please enter a name.'); $('#contact-name').reportValidity(); return; }
-  const contact = { id: editingContact || uid(), name, email: $('#contact-email').value.trim(), detail: $('#contact-detail').value.trim() };
-  const index = state.contacts.findIndex(c => c.id === editingContact); if (index >= 0) state.contacts[index] = contact; else state.contacts.push(contact);
-  state.contacts.sort((a, b) => a.name.localeCompare(b.name)); save(); renderContacts(); $('#contact-dialog').close();
-});
-$('#contact-name').addEventListener('input', () => $('#contact-name').setCustomValidity(''));
-function renderContacts() {
-  $('#contacts-empty').hidden = state.contacts.length > 0;
-  const list = $('#contact-list'); list.replaceChildren();
-  for (const contact of state.contacts) {
-    const row = element('article', 'contact-row');
-    const initials = contact.name.split(/\s+/).slice(0, 2).map(word => word[0]).join('').toUpperCase();
-    row.append(element('div', 'contact-avatar', initials)); const content = element('div', 'contact-content');
-    content.append(element('h2', '', contact.name)); if (contact.detail) content.append(element('p', '', contact.detail));
-    if (contact.email) { const mail = element('a', '', contact.email); mail.href = `mailto:${contact.email}`; content.append(mail); }
-    row.append(content); const actions = element('div', 'contact-actions'); const edit = element('button', 'contact-edit', window.translateSiteText('Edit')); edit.setAttribute('aria-label', `Edit ${contact.name}`); edit.addEventListener('click', () => openContact(contact));
-    const remove = element('button', 'icon-button'); remove.setAttribute('aria-label', `Delete ${contact.name}`); remove.append(icon('trash'));
-    remove.addEventListener('click', () => { const index = state.contacts.findIndex(c => c.id === contact.id); state.contacts.splice(index, 1); save(); renderContacts(); notify('Contact deleted', () => { state.contacts.push(contact); state.contacts.sort((a, b) => a.name.localeCompare(b.name)); save(); renderContacts(); }); });
-    actions.append(edit, remove); row.append(actions); list.append(row);
-  }
-}
 window.addEventListener('hashchange', route);
 window.addEventListener('site-language-change', () => {
   const current = Object.hasOwn(labels, location.hash.slice(1)) ? location.hash.slice(1) : 'home';
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
-  renderNoteList(); renderContacts();
+  renderNoteList();
 });
 route(); loadStudyNotes();

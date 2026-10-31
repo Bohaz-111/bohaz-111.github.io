@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="A quiet personal space for notes, sheet music, and contacts.">
   <title>Notes & Music</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=clean-contacts-2026">
   <script src="i18n-data.js?v=traditional-chinese-2026" defer></script>
   <script src="i18n.js?v=traditional-chinese-2026" defer></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=clean-contacts-2026" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,13 +38,13 @@
   </aside>
 
   <main id="main" tabindex="-1">
-    <div class="topline"><span id="current-section">Home</span></div>
+    <div class="topline"></div>
     <section id="home" class="page" aria-labelledby="home-title">
       <div class="home-intro"><h1 id="home-title">Bohaz</h1><p class="intro-copy">Welcome to my corner of the internet. I am Bohaz, I keep some of my maths/physics notes and the music I wrote here. I am also a researcher, I am broadly interested in quantum dynamics, machine learning and their applications to physical phenomenon such as thermal conductivity.</p><p class="intro-copy">I hope there is people people out there that will find these notes and sheet music useful and interesting. Ciao.</p></div>
     </section>
 
     <section id="notes" class="page" hidden aria-labelledby="notes-title">
-      <header class="page-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="notes-title">Notes</h1><p>I try to write these notes in a way that is most readable way, and tries to teach it to people</p></div><button id="new-note" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>New note</button></header>
+      <header class="page-heading"><div><h1 id="notes-title">Notes</h1><p>I try to write these notes in a way that is most readable way, and tries to teach it to people</p></div><button id="new-note" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>New note</button></header>
       <section class="study-library" aria-label="Notes"><div class="section-label"><span id="study-count" class="count-label"></span></div><p id="study-status" class="storage-note" role="status">Loading your notes…</p><ol id="study-list" class="study-list"></ol></section>
       <div class="section-label notebook-heading"><h2>Your notebook</h2><span class="count-label">Personal thoughts & reminders</span></div>
       <div id="notes-empty" class="empty-state"><svg class="empty-icon"><use href="#i-note"/></svg><h2>Start with a thought.</h2><p>This is your space to write it down.</p><button class="button" id="first-note">Create your first note</button></div>
@@ -53,15 +53,14 @@
     </section>
 
     <section id="sheet-music" class="page" hidden aria-labelledby="music-title">
-      <header class="page-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="music-title">Sheet Music</h1><p>I wrote these music when I had a lot free time, now I am getting busier, but I will try to find time write more. The recording were done in piano back in school, and they were out of tune, but it should give a rough idea of how I was intending it to be played.</p></div><span class="count-label">2 pieces</span></header>
+      <header class="page-heading"><div><h1 id="music-title">Sheet Music</h1><p>I wrote these music when I had a lot free time, now I am getting busier, but I will try to find time write more. The recording were done in piano back in school, and they were out of tune, but it should give a rough idea of how I was intending it to be played.</p></div><span class="count-label">2 pieces</span></header>
       <article class="score-detail"><a class="score-preview" href="assets/img-2056/score.pdf?v=2026" target="_blank" rel="noopener" aria-label="Open the full piano score 1 PDF"><img src="assets/img-2056/score-cover.jpg?v=2026" alt="First page of piano score 1" width="900" height="1273"><span>View full score <span aria-hidden="true">↗</span></span></a><div class="score-information"><div class="piece-kicker"><span class="eyebrow">SOLO PIANO</span></div><h2>1</h2><p class="score-description">Bohaz · 2021</p><dl class="score-facts"><div><dt>Key</dt><dd>E-flat minor</dd></div><div><dt>Time</dt><dd>4/4</dd></div><div><dt>Tempo</dt><dd>80 BPM · Rubato</dd></div><div><dt>Length</dt><dd>65 measures · 4 pages</dd></div></dl><div class="audio-section"><h3>Listen to the recording</h3><audio controls preload="metadata" aria-label="Original recording of 1"><source src="assets/img-2056/original-recording.m4a" type="audio/mp4">Your browser does not support audio playback. <a href="assets/img-2056/original-recording.m4a">Download the audio.</a></audio><p>Original recording</p></div><a class="button dark download-button" href="assets/img-2056/score.pdf?v=2026" download="1.pdf"><svg class="icon"><use href="#i-download"/></svg>Download PDF</a><div class="file-links"><a href="assets/img-2056/score.musicxml?v=2026" download="1.musicxml">MusicXML</a><span>·</span><a href="assets/img-2056/performance.mid" download="1.mid">MIDI</a><span>·</span><a href="assets/img-2056/original-recording.m4a" download="1.m4a">Audio</a></div></div></article>
       <div class="score-detail"><a class="score-preview" href="assets/score.pdf?v=2026" target="_blank" rel="noopener" aria-label="Open the full piano score 2 PDF"><img src="assets/score-cover.jpg?v=2026" alt="First page of piano score 2" width="900" height="1273"><span>View full score <span aria-hidden="true">↗</span></span></a><div class="score-information"><div class="piece-kicker"><span class="eyebrow">SOLO PIANO</span></div><h2>2</h2><p class="score-description">Bohaz · 2022</p><dl class="score-facts"><div><dt>Key</dt><dd>A-flat major</dd></div><div><dt>Time</dt><dd>4/4</dd></div><div><dt>Tempo</dt><dd>84 BPM · Rubato</dd></div><div><dt>Length</dt><dd>74 measures · 5 pages</dd></div></dl><div class="audio-section"><h3>Listen to the recording</h3><audio controls preload="metadata" aria-label="Original recording of 2"><source src="assets/original-recording.m4a" type="audio/mp4">Your browser does not support audio playback. <a href="assets/original-recording.m4a">Download the audio.</a></audio><p>Original recording</p></div><a class="button dark download-button" href="assets/score.pdf?v=2026" download="2.pdf"><svg class="icon"><use href="#i-download"/></svg>Download PDF</a><div class="file-links"><a href="assets/score.musicxml?v=2026" download="2.musicxml">MusicXML</a><span>·</span><a href="assets/performance.mid" download="2.mid">MIDI</a><span>·</span><a href="assets/original-recording.m4a" download="2.m4a">Audio</a></div></div></div>
     </section>
 
     <section id="contacts" class="page" hidden aria-labelledby="contacts-title">
-      <header class="page-heading"><div><p class="eyebrow">GET IN TOUCH</p><h1 id="contacts-title">Contacts</h1><p>Find me online or send me a message.</p></div><button id="new-contact" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>Add contact</button></header>
-      <section class="connect-section" aria-labelledby="connect-title">
-        <div class="section-label"><h2 id="connect-title">Connect with Bohaz</h2></div>
+      <header class="page-heading"><h1 id="contacts-title">Contacts</h1></header>
+      <section class="connect-section" aria-label="Contacts">
         <ul class="connect-list">
           <li><span>Email</span><a href="mailto:bohaz111@outlook.com">bohaz111@outlook.com</a></li>
           <li><span>YouTube</span><a href="https://www.youtube.com/@Bohaz" target="_blank" rel="noopener noreferrer">@Bohaz <span aria-hidden="true">↗</span></a></li>
@@ -70,9 +69,6 @@
           <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/bohaz-9073a0250/" target="_blank" rel="noopener noreferrer">Bohaz <span aria-hidden="true">↗</span></a></li>
         </ul>
       </section>
-      <div class="section-label saved-contacts-heading"><h2>Your contacts</h2><span class="count-label">Saved in this browser</span></div>
-      <div id="contacts-empty" class="empty-state"><svg class="empty-icon"><use href="#i-contact"/></svg><h2>A familiar name goes here.</h2><p>Add a friend, a teacher, or a collaborator.</p><button id="first-contact" class="button">Add your first contact</button></div>
-      <div id="contact-list" class="contact-list"></div><p class="storage-note">Your contacts are saved in this browser.</p>
     </section>
 
     <section id="cv" class="page" hidden aria-labelledby="cv-title">
@@ -110,7 +106,6 @@
     </section>
   </main>
 
-  <dialog id="contact-dialog"><form id="contact-form"><div class="dialog-heading"><h2 id="contact-dialog-title">Add a contact</h2><button type="button" class="icon-button" id="close-dialog" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></div><label for="contact-name">Name</label><input id="contact-name" name="name" autocomplete="name" required maxlength="100" placeholder="Full name"><label for="contact-email">Email <span class="optional">(optional)</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="180" placeholder="name@example.com"><label for="contact-detail">A little context <span class="optional">(optional)</span></label><input id="contact-detail" name="detail" maxlength="160" placeholder="e.g. Piano teacher"><div class="dialog-actions"><button type="button" class="button" id="cancel-contact">Cancel</button><button class="button dark" type="submit">Save contact</button></div></form></dialog>
   <div id="toast" class="toast" hidden role="status"><span id="toast-message"></span><button id="undo-action" type="button">Undo</button></div>
 </body>
 </html>
