@@ -68,7 +68,7 @@
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) if (!excludedText(walker.currentNode)) applyValue(walker.currentNode);
   }
-  const holder = document.querySelector('.topline') || document.querySelector('.reader-header');
+  const holder = document.querySelector('.sidebar-language') || document.querySelector('.reader-header');
   const label = document.createElement('label'); label.className = 'language-selector';
   const labelText = document.createElement('span'); labelText.textContent = 'Language';
   const select = document.createElement('select'); select.setAttribute('aria-label', 'Language');

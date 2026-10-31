@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="A quiet personal space for notes, sheet music, and contacts.">
   <title>Notes & Music</title>
-  <link rel="stylesheet" href="styles.css?v=language-left-2026">
+  <link rel="stylesheet" href="styles.css?v=sidebar-language-2026">
   <script src="i18n-data.js?v=piece-3-2026" defer></script>
-  <script src="i18n.js?v=traditional-chinese-2026" defer></script>
+  <script src="i18n.js?v=sidebar-language-2026" defer></script>
   <script src="app.js?v=study-notes-2026" defer></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
   </defs></svg>
 
   <aside class="sidebar">
-    <a href="#home" class="brand" aria-label="Notes and Music home"><span class="brand-mark"><svg class="icon"><use href="#i-music"/></svg></span><span>Notes & Music</span></a>
+    <div class="sidebar-language"></div>
     <nav aria-label="Main navigation">
       <a href="#home" class="nav-item active" aria-current="page"><svg class="icon"><use href="#i-home"/></svg><span>Home</span></a>
       <a href="#notes" class="nav-item"><svg class="icon"><use href="#i-note"/></svg><span>Notes</span></a>
@@ -38,7 +38,6 @@
   </aside>
 
   <main id="main" tabindex="-1">
-    <div class="topline"></div>
     <section id="home" class="page" aria-labelledby="home-title">
       <div class="home-intro"><h1 id="home-title">Bohaz</h1><p class="intro-copy">Welcome to my corner of the internet. I am Bohaz, and I keep some of my maths and physics notes and the music I wrote here. I am also a researcher, broadly interested in quantum dynamics, machine learning, and their applications to physical phenomena such as thermal conductivity.</p><p class="intro-copy">I hope there are people out there who will find these notes and sheet music useful and interesting. Ciao.</p></div>
     </section>

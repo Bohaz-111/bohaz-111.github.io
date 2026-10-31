@@ -17,3 +17,6 @@
 
 /* Keep the language setting at the top left on both the site and note reader. */
 .topline{justify-content:flex-start}.topline .language-selector{margin-left:0}.reader-header .language-selector{order:-1;margin-left:0}
+
+/* Language setting in the sidebar, where the old site branding used to be. */
+.sidebar-language{margin:0 10px 54px}.sidebar-language .language-selector{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin:0}.sidebar-language .language-selector select{max-width:100%}.page{padding-top:70px}@media(max-width:760px){.sidebar-language{margin:0 0 38px;width:100%}.sidebar-language .language-selector{align-items:stretch;gap:5px}.sidebar-language .language-selector span{font-size:9px;text-align:center;white-space:normal;overflow-wrap:anywhere}.sidebar-language .language-selector select{width:100%;max-width:100%;padding:8px 10px 8px 2px;font-size:9px;text-align:center;appearance:none;background-image:linear-gradient(45deg,transparent 50%,#6f7668 50%),linear-gradient(135deg,#6f7668 50%,transparent 50%);background-position:calc(100% - 7px) 50%,calc(100% - 4px) 50%;background-size:3px 3px;background-repeat:no-repeat}.page{padding-top:38px}}
