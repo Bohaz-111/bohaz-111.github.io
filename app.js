@@ -1,6 +1,6 @@
 'use strict';
 const $ = (selector) => document.querySelector(selector);
-const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts' };
+const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts', cv: 'CV' };
 $('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
 $('#contact-dialog').setAttribute('aria-labelledby', 'contact-dialog-title');
 const storageKey = 'notes-and-music.v1';
