@@ -98,3 +98,19 @@ window.SITE_TRANSLATIONS['zh-Hant']['Generalised Langevin Equation'] = '廣義�
 // Use the requested Chinese transliteration for Verlet.
 window.SITE_TRANSLATIONS.zh['Velocity Verlet'] = '速度韦尔莱算法';
 window.SITE_TRANSLATIONS['zh-Hant']['Velocity Verlet'] = '速度韋爾萊算法';
+
+// Updated notes introduction.
+{
+  const previous = 'I try to write these notes in the most readable way possible, with the aim of teaching others. Please let me know if you find any errors or have simpler or clearer arguments for any part.';
+  const updated = previous + ' Some of the wikipedia articles I edit are/will be based on these notes.';
+  const suffixes = {
+    fr: ' Certains des articles Wikipédia que je modifie sont ou seront fondés sur ces notes.',
+    ja: '私が編集するウィキペディアの記事の一部は、これらのノートに基づいているか、今後基づく予定です。',
+    zh: '我编辑的部分维基百科条目已经或将会以这些笔记为基础。',
+    'zh-Hant': '我編輯的部分維基百科條目已經或將會以這些筆記為基礎。'
+  };
+  for (const [language, suffix] of Object.entries(suffixes)) {
+    const dictionary = window.SITE_TRANSLATIONS[language];
+    dictionary[updated] = dictionary[previous] + suffix;
+  }
+}
