@@ -14,3 +14,6 @@
 #sheet-music .page-heading p:not(.eyebrow){max-width:680px}
 
 .topline .language-selector{margin-left:auto}
+
+/* Keep the language setting at the top left on both the site and note reader. */
+.topline{justify-content:flex-start}.topline .language-selector{margin-left:0}.reader-header .language-selector{order:-1;margin-left:0}

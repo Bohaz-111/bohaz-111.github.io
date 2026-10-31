@@ -23,3 +23,18 @@ window.SITE_TRANSLATIONS["zh-Hant"] = {"(optional)":"（選填）","{count} note
     dictionary[music] = dictionary[previousMusic] + musicSuffix;
   }
 }
+
+// Keep existing translations for the corrected English introductions.
+{
+  const updated = {
+  "Welcome to my corner of the internet. I am Bohaz, I keep some of my maths/physics notes and the music I wrote here. I am also a researcher, I am broadly interested in quantum dynamics, machine learning and their applications to physical phenomenon such as thermal conductivity.": "Welcome to my corner of the internet. I am Bohaz, and I keep some of my maths and physics notes and the music I wrote here. I am also a researcher, broadly interested in quantum dynamics, machine learning, and their applications to physical phenomena such as thermal conductivity.",
+  "I hope there is people people out there that will find these notes and sheet music useful and interesting. Ciao.": "I hope there are people out there who will find these notes and sheet music useful and interesting. Ciao.",
+  "I try to write these notes in a way that is most readable way, and tries to teach it to people. Please let me know if you find any errors, or a simpler/clearner arguments to some part.": "I try to write these notes in the most readable way possible, with the aim of teaching others. Please let me know if you find any errors or have simpler or clearer arguments for any part.",
+  "I wrote these music when I had a lot free time, now I am getting busier, but I will try to find time write more. The recording were done in piano back in school, and they were out of tune, but it should give a rough idea of how I was intending it to be played. They have not been named, I will think about what I should name them": "I wrote this music when I had a lot of free time. Now I am getting busier, but I will try to find time to write more. The recordings were made on a piano at school, and the piano was out of tune, but they should give a rough idea of how I intended the pieces to be played. They have not been named yet; I will think about what to name them."
+};
+  for (const dictionary of Object.values(window.SITE_TRANSLATIONS)) {
+    for (const [oldText, newText] of Object.entries(updated)) {
+      if (Object.hasOwn(dictionary, oldText)) dictionary[newText] = dictionary[oldText];
+    }
+  }
+}
