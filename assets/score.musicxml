@@ -14,8 +14,7 @@
       <supports element="accidental" type="yes" />
     </encoding>
     <miscellaneous>
-      <miscellaneous-field name="Composition year">2021</miscellaneous-field>
-    </miscellaneous>
+      <miscellaneous-field name="composition-date">2021-11-11</miscellaneous-field></miscellaneous>
   </identification>
   <defaults>
     <scaling>
@@ -46,7 +45,7 @@
   </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>
-    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Bohaz · 2021</credit-words>
+    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Bohaz · 11 Nov 2021</credit-words>
   </credit>
   <part-list>
     <score-part id="P20cb7605638f31cf2f4ad803608cfee6">

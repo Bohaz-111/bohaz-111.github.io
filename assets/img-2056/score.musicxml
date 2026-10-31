@@ -14,8 +14,7 @@
       <supports element="accidental" type="yes" />
     </encoding>
     <miscellaneous>
-      <miscellaneous-field name="composition-year">2022</miscellaneous-field>
-    </miscellaneous>
+      <miscellaneous-field name="composition-date">2022-01-23</miscellaneous-field></miscellaneous>
   </identification>
   <defaults>
     <scaling>
@@ -46,7 +45,7 @@
   </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>
-    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Bohaz · 2022</credit-words>
+    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Bohaz · 23 Jan 2022</credit-words>
   </credit>
   <part-list>
     <score-part id="Pdc201a74c8635ae3f7db5df3595b7656">

@@ -38,3 +38,41 @@ window.SITE_TRANSLATIONS["zh-Hant"] = {"(optional)":"（選填）","{count} note
     }
   }
 }
+
+// The third piece and dates shown in the sheet music collection.
+Object.assign(window.SITE_TRANSLATIONS.fr, {
+  '3 pieces': '3 morceaux',
+  'Bohaz · 23 Jan 2022': 'Bohaz · 23 janvier 2022',
+  'Bohaz · 11 Nov 2021': 'Bohaz · 11 novembre 2021',
+  'Bohaz · 21 May 2022': 'Bohaz · 21 mai 2022',
+  'Open the full piano score 3 PDF': 'Ouvrir la partition complète pour piano n° 3 en PDF',
+  'First page of piano score 3': 'Première page de la partition pour piano n° 3',
+  'Original recording of 3': 'Enregistrement original du morceau n° 3'
+});
+Object.assign(window.SITE_TRANSLATIONS.ja, {
+  '3 pieces': '3 曲',
+  'Bohaz · 23 Jan 2022': 'Bohaz · 2022年1月23日',
+  'Bohaz · 11 Nov 2021': 'Bohaz · 2021年11月11日',
+  'Bohaz · 21 May 2022': 'Bohaz · 2022年5月21日',
+  'Open the full piano score 3 PDF': '第3曲のピアノ譜全体をPDFで開く',
+  'First page of piano score 3': '第3曲のピアノ譜の1ページ目',
+  'Original recording of 3': '第3曲の原音源'
+});
+Object.assign(window.SITE_TRANSLATIONS.zh, {
+  '3 pieces': '3 首作品',
+  'Bohaz · 23 Jan 2022': 'Bohaz · 2022年1月23日',
+  'Bohaz · 11 Nov 2021': 'Bohaz · 2021年11月11日',
+  'Bohaz · 21 May 2022': 'Bohaz · 2022年5月21日',
+  'Open the full piano score 3 PDF': '打开第3首完整钢琴乐谱PDF',
+  'First page of piano score 3': '第3首钢琴乐谱的第一页',
+  'Original recording of 3': '第3首的原始录音'
+});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {
+  '3 pieces': '3 首作品',
+  'Bohaz · 23 Jan 2022': 'Bohaz · 2022年1月23日',
+  'Bohaz · 11 Nov 2021': 'Bohaz · 2021年11月11日',
+  'Bohaz · 21 May 2022': 'Bohaz · 2022年5月21日',
+  'Open the full piano score 3 PDF': '打開第3首完整鋼琴樂譜PDF',
+  'First page of piano score 3': '第3首鋼琴樂譜的第一頁',
+  'Original recording of 3': '第3首的原始錄音'
+});
