@@ -1,7 +1,7 @@
 'use strict';
 (() => {
   const dictionaries = window.SITE_TRANSLATIONS || {};
-  const locales = { en: 'en', fr: 'fr', ja: 'ja', zh: 'zh-Hans' };
+  const locales = { en: 'en', fr: 'fr', ja: 'ja', zh: 'zh-Hans', 'zh-Hant': 'zh-Hant' };
   const storageKey = 'notes-and-music.language';
   let language = 'en';
   try { const saved = localStorage.getItem(storageKey); if (Object.hasOwn(locales, saved)) language = saved; } catch {}
@@ -72,7 +72,7 @@
   const label = document.createElement('label'); label.className = 'language-selector';
   const labelText = document.createElement('span'); labelText.textContent = 'Language';
   const select = document.createElement('select'); select.setAttribute('aria-label', 'Language');
-  const choices = [['en', 'English'], ['fr', 'Français'], ['ja', '日本語'], ['zh', '简体中文']];
+  const choices = [['en', 'English'], ['fr', 'Français'], ['ja', '日本語'], ['zh', '简体中文'], ['zh-Hant', '繁體中文']];
   for (const [value, name] of choices) { const option = document.createElement('option'); option.value = value; option.textContent = name; option.setAttribute('data-i18n-skip', ''); select.append(option); }
   select.value = language; label.append(labelText, select); holder?.append(label);
   function changeLanguage() {
