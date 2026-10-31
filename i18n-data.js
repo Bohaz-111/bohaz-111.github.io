@@ -128,3 +128,8 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {'Read':'Lire'});
 Object.assign(window.SITE_TRANSLATIONS.ja, {'Read':'読む'});
 Object.assign(window.SITE_TRANSLATIONS.zh, {'Read':'阅读'});
 Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Read':'閱讀'});
+
+Object.assign(window.SITE_TRANSLATIONS.fr, {"100 BPM · Rubato":"100 BPM · Rubato", "62 measures · 4 pages (transcribed)":"62 mesures · 4 pages (transcrites)"});
+Object.assign(window.SITE_TRANSLATIONS.ja, {"100 BPM · Rubato":"100 BPM · ルバート", "62 measures · 4 pages (transcribed)":"62小節 · 4ページ（採譜済み）"});
+Object.assign(window.SITE_TRANSLATIONS.zh, {"100 BPM · Rubato":"100 BPM · 自由速度", "62 measures · 4 pages (transcribed)":"62 小节 · 4 页（已转录）"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"100 BPM · Rubato":"100 BPM · 自由速度", "62 measures · 4 pages (transcribed)":"62 小節 · 4 頁（已轉譜）"});
