@@ -91,7 +91,7 @@ async function loadNote() {
     const index = notes.findIndex(note => note.number === requested);
     if (index < 0) throw new Error('This note was not found. Return to All notes to choose one.');
     const note = notes[index];
-    document.title = `N${note.number} · ${note.title} — Notes & Music`;
+    document.title = `N${note.number} · ${window.translateSiteText(note.title)} — Notes & Music`;
     get('reader-number').textContent = `NOTE N${note.number}`;
     get('reader-title').textContent = note.title;
     get('reader-meta').textContent = `${note.pages} ${note.pages === 1 ? 'page' : 'pages'} · PDF`;
@@ -121,6 +121,10 @@ get('page-prev').addEventListener('click', () => changePage(currentPage - 1));
 get('page-next').addEventListener('click', () => changePage(currentPage + 1));
 get('page-number').addEventListener('change', event => changePage(event.target.value));
 get('page-zoom').addEventListener('change', () => renderPage().catch(showError));
+window.addEventListener('site-language-change', () => {
+  const title = get('reader-title').textContent;
+  if (requested && title) document.title = `N${requested} · ${title} — Notes & Music`;
+});
 let resizeTimer;
 window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => renderPage().catch(showError), 180); });
 window.addEventListener('pagehide', event => { if (!event.persisted && pdfBlobUrl) URL.revokeObjectURL(pdfBlobUrl); });

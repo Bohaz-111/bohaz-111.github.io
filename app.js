@@ -12,7 +12,7 @@ let undo = null;
 let toastTimer;
 let studyNotes = [];
 const uid = () => typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-const dateLabel = (value) => new Date(value).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+const dateLabel = (value) => new Date(value).toLocaleDateString(document.documentElement.lang, { month: 'short', day: 'numeric' });
 function save() {
   try { localStorage.setItem(storageKey, JSON.stringify(state)); $('#note-status').textContent = 'Saved in this browser'; }
   catch { $('#note-status').textContent = 'Could not save in this browser'; notify('Browser storage is unavailable. Keep a copy of your changes.'); }
@@ -28,7 +28,7 @@ function route() {
   document.querySelectorAll('.page').forEach(page => page.hidden = page.id !== current);
   document.querySelectorAll('.nav-item').forEach(link => { const active = link.hash === `#${current}`; link.classList.toggle('active', active); if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
   $('#current-section').textContent = labels[current];
-  document.title = `${labels[current]} — Notes & Music`;
+  document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
   if (current === 'notes') renderNotes();
   if (current === 'contacts') renderContacts();
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -81,7 +81,7 @@ function renderNoteList() {
   for (const note of state.notes) {
     const button = element('button', `note-list-button${note.id === selectedNote ? ' selected' : ''}`);
     button.type = 'button'; button.setAttribute('aria-pressed', String(note.id === selectedNote));
-    button.append(element('strong', '', note.title || 'Untitled note'), element('small', '', dateLabel(note.updated)));
+    button.append(element('strong', '', note.title || window.translateSiteText('Untitled note')), element('small', '', dateLabel(note.updated)));
     button.addEventListener('click', () => { selectedNote = note.id; renderNotes(); }); list.append(button);
   }
 }
@@ -121,10 +121,16 @@ function renderContacts() {
     row.append(element('div', 'contact-avatar', initials)); const content = element('div', 'contact-content');
     content.append(element('h2', '', contact.name)); if (contact.detail) content.append(element('p', '', contact.detail));
     if (contact.email) { const mail = element('a', '', contact.email); mail.href = `mailto:${contact.email}`; content.append(mail); }
-    row.append(content); const actions = element('div', 'contact-actions'); const edit = element('button', 'contact-edit', 'Edit'); edit.setAttribute('aria-label', `Edit ${contact.name}`); edit.addEventListener('click', () => openContact(contact));
+    row.append(content); const actions = element('div', 'contact-actions'); const edit = element('button', 'contact-edit', window.translateSiteText('Edit')); edit.setAttribute('aria-label', `Edit ${contact.name}`); edit.addEventListener('click', () => openContact(contact));
     const remove = element('button', 'icon-button'); remove.setAttribute('aria-label', `Delete ${contact.name}`); remove.append(icon('trash'));
     remove.addEventListener('click', () => { const index = state.contacts.findIndex(c => c.id === contact.id); state.contacts.splice(index, 1); save(); renderContacts(); notify('Contact deleted', () => { state.contacts.push(contact); state.contacts.sort((a, b) => a.name.localeCompare(b.name)); save(); renderContacts(); }); });
     actions.append(edit, remove); row.append(actions); list.append(row);
   }
 }
-window.addEventListener('hashchange', route); updateCounts(); route(); loadStudyNotes();
+window.addEventListener('hashchange', route);
+window.addEventListener('site-language-change', () => {
+  const current = Object.hasOwn(labels, location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+  document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
+  renderNoteList(); renderContacts(); updateCounts();
+});
+updateCounts(); route(); loadStudyNotes();
