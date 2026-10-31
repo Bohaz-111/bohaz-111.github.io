@@ -9,6 +9,7 @@ let pdfDocument;
 let currentPage = 1;
 let renderTask;
 let renderVersion = 0;
+let fitWidth = true;
 
 async function renderPage() {
   if (!pdfDocument) return;
@@ -20,11 +21,18 @@ async function renderPage() {
   const page = await pdfDocument.getPage(currentPage);
   if (version !== renderVersion) return;
   const surface = get('pdf-surface');
-  const zoom = get('page-zoom').value;
   const natural = page.getViewport({ scale: 1 });
-  const scale = zoom === 'fit' ? Math.min(960, surface.clientWidth - 32) / natural.width : Number(zoom) * 1.3333;
+  const slider = get('page-zoom');
+  if (fitWidth) {
+    const percent = Math.round((Math.min(960, Math.max(1, surface.clientWidth - 32)) / natural.width / 1.3333 * 100) / 5) * 5;
+    slider.value = String(Math.max(Number(slider.min), Math.min(Number(slider.max), percent)));
+  }
+  const percent = Number(slider.value);
+  get('zoom-value').textContent = `${percent}%`;
+  slider.setAttribute('aria-valuetext', `${percent}%`);
+  const scale = fitWidth ? Math.min(960, Math.max(1, surface.clientWidth - 32)) / natural.width : percent / 100 * 1.3333;
   const viewport = page.getViewport({ scale });
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const ratio = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(20000000 / (viewport.width * viewport.height)));
   const canvas = get('pdf-canvas');
   canvas.width = Math.ceil(viewport.width * ratio); canvas.height = Math.ceil(viewport.height * ratio);
   canvas.style.width = `${Math.ceil(viewport.width)}px`; canvas.style.height = `${Math.ceil(viewport.height)}px`;
@@ -120,7 +128,18 @@ get('reader-retry').addEventListener('click', loadNote);
 get('page-prev').addEventListener('click', () => changePage(currentPage - 1));
 get('page-next').addEventListener('click', () => changePage(currentPage + 1));
 get('page-number').addEventListener('change', event => changePage(event.target.value));
-get('page-zoom').addEventListener('change', () => renderPage().catch(showError));
+get('page-zoom').addEventListener('input', event => {
+  fitWidth = false;
+  get('zoom-fit').setAttribute('aria-pressed', 'false');
+  get('zoom-value').textContent = `${event.target.value}%`;
+  event.target.setAttribute('aria-valuetext', `${event.target.value}%`);
+  renderPage().catch(showError);
+});
+get('zoom-fit').addEventListener('click', () => {
+  fitWidth = true;
+  get('zoom-fit').setAttribute('aria-pressed', 'true');
+  renderPage().catch(showError);
+});
 window.addEventListener('site-language-change', () => {
   const title = get('reader-title').textContent;
   if (requested && title) document.title = `N${requested} · ${title} — Notes & Music`;

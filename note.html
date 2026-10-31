@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#ffffff">
   <title>Note — Notes & Music</title>
   <link rel="stylesheet" href="styles.css?v=sidebar-language-2026">
-  <link rel="stylesheet" href="note.css">
+  <link rel="stylesheet" href="note.css?v=zoom-slider-2026">
   <script src="i18n-data.js?v=traditional-chinese-2026" defer></script>
   <script src="i18n.js?v=sidebar-language-2026" defer></script>
-  <script src="note.js" type="module"></script>
+  <script src="note.js?v=zoom-slider-2026" type="module"></script>
 </head>
 <body class="reader-page">
   <header class="reader-header">
@@ -20,7 +20,7 @@
   <nav class="reader-nav" aria-label="Note navigation"><a id="reader-prev" hidden>← Previous note</a><span id="reader-position"></span><a id="reader-next" hidden>Next note →</a></nav>
   <div id="reader-status" class="reader-status" role="status"><p id="reader-message">Loading your note…</p><progress id="reader-progress" max="100" value="0" hidden aria-label="PDF loading progress"></progress><button id="reader-retry" class="button" hidden>Try again</button></div>
   <section id="pdf-reader" aria-label="PDF reader" hidden>
-    <div class="pdf-toolbar"><button id="page-prev" class="button" aria-label="Previous page">←</button><label for="page-number">Page</label><input id="page-number" type="number" min="1" value="1" aria-label="Page number"><span id="page-total"></span><button id="page-next" class="button" aria-label="Next page">→</button><label class="sr-only" for="page-zoom">Zoom</label><select id="page-zoom" aria-label="Zoom"><option value="fit">Fit width</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></div>
+    <div class="pdf-toolbar"><button id="page-prev" class="button" aria-label="Previous page">←</button><label for="page-number">Page</label><input id="page-number" type="number" min="1" value="1" aria-label="Page number"><span id="page-total"></span><button id="page-next" class="button" aria-label="Next page">→</button><div class="zoom-controls"><label for="page-zoom">Zoom</label><input id="page-zoom" type="range" min="25" max="300" step="5" value="100" aria-label="Zoom"><output id="zoom-value" for="page-zoom" aria-live="off">100%</output><button id="zoom-fit" class="button" type="button" aria-pressed="true">Fit width</button></div></div>
     <div id="pdf-surface" class="pdf-surface"><canvas id="pdf-canvas" role="img" aria-label="PDF page"></canvas><div id="pdf-text" class="sr-only"></div></div>
   </section>
 </body>

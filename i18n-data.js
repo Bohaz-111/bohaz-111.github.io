@@ -82,3 +82,9 @@ window.SITE_TRANSLATIONS["fr"]["I have finished writing this, but haven't got ti
 window.SITE_TRANSLATIONS["ja"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "この曲は書き終えていますが、残りを採譜して録音する時間がまだありません。";
 window.SITE_TRANSLATIONS["zh"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "我已经写完了这首曲子，但还没有时间将剩下的部分记谱和录制下来。";
 window.SITE_TRANSLATIONS["zh-Hant"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "我已經寫完了這首曲子，但還沒有時間將剩下的部分記譜和錄製下來。";
+
+// Messages for the inline sheet music reader.
+Object.assign(window.SITE_TRANSLATIONS.fr, {'Loading score…':'Chargement de la partition…','The score could not be displayed.':'Impossible d’afficher la partition.'});
+Object.assign(window.SITE_TRANSLATIONS.ja, {'Loading score…':'楽譜を読み込み中…','The score could not be displayed.':'楽譜を表示できませんでした。'});
+Object.assign(window.SITE_TRANSLATIONS.zh, {'Loading score…':'正在加载乐谱…','The score could not be displayed.':'无法显示乐谱。'});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Loading score…':'正在載入樂譜…','The score could not be displayed.':'無法顯示樂譜。'});
