@@ -16,11 +16,6 @@ const dateLabel = (value) => new Date(value).toLocaleDateString(document.documen
 function save() {
   try { localStorage.setItem(storageKey, JSON.stringify(state)); $('#note-status').textContent = 'Saved in this browser'; }
   catch { $('#note-status').textContent = 'Could not save in this browser'; notify('Browser storage is unavailable. Keep a copy of your changes.'); }
-  updateCounts();
-}
-function updateCounts() {
-  $('#home-note-count').textContent = studyNotes.length ? `${studyNotes.length} notes${state.notes.length ? ` · ${state.notes.length} personal` : ' in your collection'}` : state.notes.length ? `${state.notes.length} ${state.notes.length === 1 ? 'note' : 'notes'} in your notebook` : 'A blank page for your next idea';
-  $('#home-contact-count').textContent = state.contacts.length ? `${state.contacts.length} ${state.contacts.length === 1 ? 'person' : 'people'} in your collection` : 'Keep the right people close';
 }
 function route() {
   const requested = location.hash.slice(1);
@@ -61,7 +56,7 @@ async function loadStudyNotes() {
       actions.append(view, download); row.append(actions); list.append(row);
     }
     $('#study-count').textContent = `${studyNotes.length} notes · ${studyNotes.reduce((sum, n) => sum + n.pages, 0)} pages`;
-    status.hidden = true; updateCounts();
+    status.hidden = true;
   } catch {
     status.replaceChildren(document.createTextNode('The notes could not load. '));
     const retry = element('button', 'contact-edit', 'Try again');
@@ -131,6 +126,6 @@ window.addEventListener('hashchange', route);
 window.addEventListener('site-language-change', () => {
   const current = Object.hasOwn(labels, location.hash.slice(1)) ? location.hash.slice(1) : 'home';
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
-  renderNoteList(); renderContacts(); updateCounts();
+  renderNoteList(); renderContacts();
 });
-updateCounts(); route(); loadStudyNotes();
+route(); loadStudyNotes();
