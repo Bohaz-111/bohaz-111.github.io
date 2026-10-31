@@ -1,0 +1,195 @@
+[
+  {
+    "number": 1,
+    "title": "Principles of QM",
+    "originalFilename": "N1 Principles of QM.pdf",
+    "pages": 31,
+    "bytes": 269583,
+    "sha256": "eed43a456a6d6f49043144903c0337d203ae0c9dc8c5b27f2f931ce9ae05165b",
+    "url": "assets/notes/n01-principles-of-qm.pdf"
+  },
+  {
+    "number": 2,
+    "title": "Ladder operators",
+    "originalFilename": "N2 Ladder_operators.pdf",
+    "pages": 24,
+    "bytes": 253734,
+    "sha256": "91d4ab60fb68a1766179e9380de30723b77ca2fddcea63c44812fc23c5f531c8",
+    "url": "assets/notes/n02-ladder-operators.pdf"
+  },
+  {
+    "number": 3,
+    "title": "Action and Geometry",
+    "originalFilename": "N3 Action_and_Geometry.pdf",
+    "pages": 3,
+    "bytes": 129054,
+    "sha256": "af24c9a848df37c555578b0afdb95eb0c5f3fa539a2d2787cbaa69708127daed",
+    "url": "assets/notes/n03-action-and-geometry.pdf"
+  },
+  {
+    "number": 4,
+    "title": "Statistical Mechanics",
+    "originalFilename": "N4 Statistical_Mechanics.pdf",
+    "pages": 5,
+    "bytes": 132904,
+    "sha256": "db18cf2cbd5cc8dc39c7dd644cfc74f63c13d708b0f7c6b380134c16c9e5c733",
+    "url": "assets/notes/n04-statistical-mechanics.pdf"
+  },
+  {
+    "number": 5,
+    "title": "Spline",
+    "originalFilename": "N5 Spline.pdf",
+    "pages": 1,
+    "bytes": 80515,
+    "sha256": "fda70d92bceb15a00b83a5756ca5a2bb039b4d803aea710f5e8400c269702b9b",
+    "url": "assets/notes/n05-spline.pdf"
+  },
+  {
+    "number": 6,
+    "title": "Principle of SM",
+    "originalFilename": "N6 Principle of SM.pdf",
+    "pages": 16,
+    "bytes": 207157,
+    "sha256": "8fe1746bc41f0063ce657d1e7f02aa9b5390db0774221f0cac93b2e51b1fac68",
+    "url": "assets/notes/n06-principle-of-sm.pdf"
+  },
+  {
+    "number": 7,
+    "title": "GLE",
+    "originalFilename": "N7 GLE.pdf",
+    "pages": 8,
+    "bytes": 162758,
+    "sha256": "01e1ed42ff5cdec478b9aa11b15f7594a66436302517618ca2e76904611291b1",
+    "url": "assets/notes/n07-gle.pdf"
+  },
+  {
+    "number": 8,
+    "title": "Matsubara Dynamics",
+    "originalFilename": "N8 Matsubara Dynamics.pdf",
+    "pages": 6,
+    "bytes": 189995,
+    "sha256": "cfcc0a4d86e7ea481de33c9209450c2b3fbbfb79f645296a69a32ad58d84b9e6",
+    "url": "assets/notes/n08-matsubara-dynamics.pdf"
+  },
+  {
+    "number": 9,
+    "title": "Complex Analysis",
+    "originalFilename": "N9 Complex Analysis.pdf",
+    "pages": 16,
+    "bytes": 59698298,
+    "sha256": "bfbc6aba265af70c69128741e4898870dc18814ce7eb485c6035760f01aa7f43",
+    "chunks": [
+      {
+        "url": "assets/notes/n09-complex-analysis.part01.bin",
+        "bytes": 20971520
+      },
+      {
+        "url": "assets/notes/n09-complex-analysis.part02.bin",
+        "bytes": 20971520
+      },
+      {
+        "url": "assets/notes/n09-complex-analysis.part03.bin",
+        "bytes": 17755258
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "title": "Tensor",
+    "originalFilename": "N10 Tensor.pdf",
+    "pages": 1,
+    "bytes": 111439,
+    "sha256": "b1b3fdea06ca6b139536a80046d2fbddd7cefe63fcd261dbc09b0da818db0184",
+    "url": "assets/notes/n10-tensor.pdf"
+  },
+  {
+    "number": 11,
+    "title": "Laplace Transform",
+    "originalFilename": "N11 Laplace Transform.pdf",
+    "pages": 3,
+    "bytes": 144268,
+    "sha256": "3cb5f4d588b2f8a574168ad0b1f9f50fe6e77dab4e03fa83aad0c8708e6d4927",
+    "url": "assets/notes/n11-laplace-transform.pdf"
+  },
+  {
+    "number": 12,
+    "title": "Principles of Thermodynamics",
+    "originalFilename": "N12 Principles_of_Thermodynamics.pdf",
+    "pages": 17,
+    "bytes": 356602,
+    "sha256": "24f31823edd16dddfa227ddf0419cfaef2f543d326d665be6e67880f146d55ec",
+    "url": "assets/notes/n12-principles-of-thermodynamics.pdf"
+  },
+  {
+    "number": 13,
+    "title": "Linear Response Theory",
+    "originalFilename": "N13 Linear Response Theory.pdf",
+    "pages": 14,
+    "bytes": 215192,
+    "sha256": "c84d5f79c463d4400b8ee775de5a09db9a14725e6be6d5f8d7a7130b47ada09e",
+    "url": "assets/notes/n13-linear-response-theory.pdf"
+  },
+  {
+    "number": 14,
+    "title": "Source Coding",
+    "originalFilename": "N14 Source Coding.pdf",
+    "pages": 3,
+    "bytes": 156811,
+    "sha256": "bec28d058b04215e606d1051f63191861200b9408badd01d5be944e90531d8d3",
+    "url": "assets/notes/n14-source-coding.pdf"
+  },
+  {
+    "number": 15,
+    "title": "Velocity Verlet",
+    "originalFilename": "N15 Velocity_Verlet.pdf",
+    "pages": 2,
+    "bytes": 100915,
+    "sha256": "f18ab415de57c96b328ea2382ada4d55da5e37b00b2c104b318052248674232e",
+    "url": "assets/notes/n15-velocity-verlet.pdf"
+  },
+  {
+    "number": 16,
+    "title": "Principles of Machine Learning",
+    "originalFilename": "N16_Principles_of_Machine_Learning.pdf",
+    "pages": 25,
+    "bytes": 1816610,
+    "sha256": "609358f482d56034cfe6ad746af999d21fc507b036d55d9b43932a7b1b8998f9",
+    "url": "assets/notes/n16-principles-of-machine-learning.pdf"
+  },
+  {
+    "number": 17,
+    "title": "Action generating function",
+    "originalFilename": "N17_Action_generating_function.pdf",
+    "pages": 5,
+    "bytes": 164773,
+    "sha256": "a20c9027e9aed625a7a7d67096ed7553dd9557f964c51b4745f27c4dd6d04bc9",
+    "url": "assets/notes/n17-action-generating-function.pdf"
+  },
+  {
+    "number": 18,
+    "title": "Hamilton jacobi equation",
+    "originalFilename": "N18 Hamilton_jacobi_equation.pdf",
+    "pages": 2,
+    "bytes": 138237,
+    "sha256": "7d3b65bc0017d16f783cb2dee7582344ecb15bc5eecf4fad928d4f3edff28295",
+    "url": "assets/notes/n18-hamilton-jacobi-equation.pdf"
+  },
+  {
+    "number": 19,
+    "title": "Wigner transport equation",
+    "originalFilename": "N19_Wigner_transport_equation.pdf",
+    "pages": 7,
+    "bytes": 194843,
+    "sha256": "5714d02bd6640f319773f1ad18704f47c4c4eb1cef62eaf3164b43f908ed7120",
+    "url": "assets/notes/n19-wigner-transport-equation.pdf"
+  },
+  {
+    "number": 20,
+    "title": "Chemical reaction rates",
+    "originalFilename": "N20_Chemical_reaction_rates.pdf",
+    "pages": 4,
+    "bytes": 144022,
+    "sha256": "c9dec023bb8b2ea79390ed1cd73fd6b379c02858228c81d21d1c1ebc541f2be9",
+    "url": "assets/notes/n20-chemical-reaction-rates.pdf"
+  }
+]

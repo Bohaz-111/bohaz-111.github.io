@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A quiet personal space for notes, sheet music, and contacts.">
+  <title>Notes & Music</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H5a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9zM14 3v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="17" cy="16" rx="3" ry="3"/></symbol>
+    <symbol id="i-contact" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </defs></svg>
+
+  <aside class="sidebar">
+    <a href="#home" class="brand" aria-label="Notes and Music home"><span class="brand-mark"><svg class="icon"><use href="#i-music"/></svg></span><span>Notes & Music<span class="brand-caption">A personal space</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home" class="nav-item active" aria-current="page"><svg class="icon"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="#notes" class="nav-item"><svg class="icon"><use href="#i-note"/></svg><span>Notes</span></a>
+      <a href="#sheet-music" class="nav-item"><svg class="icon"><use href="#i-music"/></svg><span>Sheet Music</span></a>
+      <a href="#contacts" class="nav-item"><svg class="icon"><use href="#i-contact"/></svg><span>Contacts</span></a>
+    </nav>
+    <div class="sidebar-bottom"><span class="small-dot"></span><span>A little room to create.</span></div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <div class="topline"><span id="current-section">Home</span><span class="topline-detail">Your personal collection</span></div>
+    <section id="home" class="page" aria-labelledby="home-title">
+      <div class="home-intro"><p class="eyebrow">WELCOME HOME</p><h1 id="home-title">A place for your notes<br>and your next piece.</h1><p class="intro-copy">Well done for finding this small corner of the internet. I am Bohaz, I keep some of my maths/physics notes and some of the music I wrote here. Hopefully, there is people out there, will find these useful and interesting. Ciao.</p><a class="text-link" href="#notes">Write something <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="section-label"><h2>On your music stand</h2><a href="#sheet-music">View sheet music <span aria-hidden="true">↗</span></a></div>
+      <a class="recent-score" href="#sheet-music"><div class="recent-cover"><img src="assets/score-cover.jpg" alt="Preview of the IMG_2048 piano score" width="900" height="1273"></div><div class="recent-body"><p class="eyebrow">PIANO · TRANSCRIPTION</p><h3>IMG_2048</h3><p>A-flat major <span>·</span> 74 measures <span>·</span> 5 pages</p><span class="recent-action">Open score & listen <svg class="icon"><use href="#i-arrow"/></svg></span></div><span class="draft-label">Draft</span></a>
+      <div class="home-shortcuts"><a href="#notes"><svg class="icon"><use href="#i-note"/></svg><span><strong>Your notes</strong><small id="home-note-count">A blank page for your next idea</small></span><svg class="icon arrow-muted"><use href="#i-arrow"/></svg></a><a href="#contacts"><svg class="icon"><use href="#i-contact"/></svg><span><strong>Your contacts</strong><small id="home-contact-count">Keep the right people close</small></span><svg class="icon arrow-muted"><use href="#i-arrow"/></svg></a></div>
+    </section>
+
+    <section id="notes" class="page" hidden aria-labelledby="notes-title">
+      <header class="page-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="notes-title">Notes</h1><p>I try to write these notes in a way that is most readable way, and tries to teach it to people</p></div><button id="new-note" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>New note</button></header>
+      <section class="study-library" aria-label="Notes"><div class="section-label"><span id="study-count" class="count-label"></span></div><p id="study-status" class="storage-note" role="status">Loading your notes…</p><ol id="study-list" class="study-list"></ol></section>
+      <div class="section-label notebook-heading"><h2>Your notebook</h2><span class="count-label">Personal thoughts & reminders</span></div>
+      <div id="notes-empty" class="empty-state"><svg class="empty-icon"><use href="#i-note"/></svg><h2>Start with a thought.</h2><p>This is your space to write it down.</p><button class="button" id="first-note">Create your first note</button></div>
+      <div id="notes-workspace" class="notes-workspace" hidden><div class="note-list" id="note-list" aria-label="Your notes"></div><div class="note-editor"><div class="editor-toolbar"><span id="note-status" role="status">Saved in this browser</span><button id="delete-note" class="icon-button" aria-label="Delete this note" title="Delete note"><svg class="icon"><use href="#i-trash"/></svg></button></div><label class="sr-only" for="note-title">Note title</label><input id="note-title" class="note-title-input" placeholder="Untitled note" maxlength="120"><label class="sr-only" for="note-body">Note content</label><textarea id="note-body" placeholder="Let your thoughts find a page…"></textarea></div></div>
+      <p class="storage-note">Your notes are saved in this browser.</p>
+    </section>
+
+    <section id="sheet-music" class="page" hidden aria-labelledby="music-title">
+      <header class="page-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="music-title">Sheet Music</h1><p>A score to explore, and a piano preview to follow.</p></div><span class="count-label">1 piece</span></header>
+      <div class="score-detail"><a class="score-preview" href="assets/score.pdf" target="_blank" rel="noopener" aria-label="Open the full piano score PDF"><img src="assets/score-cover.jpg" alt="First page of IMG_2048, piano transcription" width="900" height="1273"><span>View full score <span aria-hidden="true">↗</span></span></a><div class="score-information"><div class="piece-kicker"><span class="eyebrow">SOLO PIANO</span><span class="draft-label">Draft</span></div><h2>IMG_2048</h2><p class="score-description">Piano transcription from your recording.</p><dl class="score-facts"><div><dt>Key</dt><dd>A-flat major</dd></div><div><dt>Time</dt><dd>4/4</dd></div><div><dt>Tempo</dt><dd>84 BPM · Rubato</dd></div><div><dt>Length</dt><dd>74 measures · 5 pages</dd></div></dl><div class="audio-section"><h3>Listen to the score</h3><audio controls preload="metadata" aria-label="Piano playback of IMG_2048"><source src="assets/piano-preview.mp3" type="audio/mpeg">Your browser does not support audio playback. <a href="assets/piano-preview.mp3">Download the audio.</a></audio><p>Piano playback · 3:36</p></div><a class="button dark download-button" href="assets/score.pdf" download="IMG_2048_piano.pdf"><svg class="icon"><use href="#i-download"/></svg>Download PDF</a><div class="file-links"><a href="assets/score.musicxml" download="IMG_2048_piano.musicxml">MusicXML</a><span>·</span><a href="assets/performance.mid" download="IMG_2048_performance.mid">MIDI</a><span>·</span><a href="assets/piano-preview.mp3" download="IMG_2048_preview.mp3">Audio</a></div></div></div>
+    </section>
+
+    <section id="contacts" class="page" hidden aria-labelledby="contacts-title">
+      <header class="page-heading"><div><p class="eyebrow">GET IN TOUCH</p><h1 id="contacts-title">Contacts</h1><p>Find me online or send me a message.</p></div><button id="new-contact" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>Add contact</button></header>
+      <section class="connect-section" aria-labelledby="connect-title">
+        <div class="section-label"><h2 id="connect-title">Connect with Bohaz</h2></div>
+        <ul class="connect-list">
+          <li><span>Email</span><a href="mailto:bohaz111@outlook.com">bohaz111@outlook.com</a></li>
+          <li><span>YouTube</span><a href="https://www.youtube.com/@Bohaz" target="_blank" rel="noopener noreferrer">@Bohaz <span aria-hidden="true">↗</span></a></li>
+          <li><span>GitHub</span><a href="https://github.com/Bohaz-111" target="_blank" rel="noopener noreferrer">Bohaz-111 <span aria-hidden="true">↗</span></a></li>
+          <li><span>Google Scholar</span><a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;gmla=AKCpqFxZAA6YpxOqNzFfS6gY06j0EUJ-RLBBu7WSamSIT7xNwzrLKkpgYS9bCTYdx75NLC9vK_AcyJLTfwz1z8SyT2VK&amp;user=j2mjN9UAAAAJ" target="_blank" rel="noopener noreferrer">View profile <span aria-hidden="true">↗</span></a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/bohaz-9073a0250/" target="_blank" rel="noopener noreferrer">Bohaz <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </section>
+      <div class="section-label saved-contacts-heading"><h2>Your contacts</h2><span class="count-label">Saved in this browser</span></div>
+      <div id="contacts-empty" class="empty-state"><svg class="empty-icon"><use href="#i-contact"/></svg><h2>A familiar name goes here.</h2><p>Add a friend, a teacher, or a collaborator.</p><button id="first-contact" class="button">Add your first contact</button></div>
+      <div id="contact-list" class="contact-list"></div><p class="storage-note">Your contacts are saved in this browser.</p>
+    </section>
+  </main>
+
+  <dialog id="contact-dialog"><form id="contact-form"><div class="dialog-heading"><h2 id="contact-dialog-title">Add a contact</h2><button type="button" class="icon-button" id="close-dialog" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></div><label for="contact-name">Name</label><input id="contact-name" name="name" autocomplete="name" required maxlength="100" placeholder="Full name"><label for="contact-email">Email <span class="optional">(optional)</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="180" placeholder="name@example.com"><label for="contact-detail">A little context <span class="optional">(optional)</span></label><input id="contact-detail" name="detail" maxlength="160" placeholder="e.g. Piano teacher"><div class="dialog-actions"><button type="button" class="button" id="cancel-contact">Cancel</button><button class="button dark" type="submit">Save contact</button></div></form></dialog>
+  <div id="toast" class="toast" hidden role="status"><span id="toast-message"></span><button id="undo-action" type="button">Undo</button></div>
+</body>
+</html>
