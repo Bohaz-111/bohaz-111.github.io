@@ -124,3 +124,7 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {'Open in new tab':'Ouvrir dans un no
 Object.assign(window.SITE_TRANSLATIONS.ja, {'Open in new tab':'新しいタブで開く'});
 Object.assign(window.SITE_TRANSLATIONS.zh, {'Open in new tab':'在新标签页中打开'});
 Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Open in new tab':'在新分頁中開啟'});
+Object.assign(window.SITE_TRANSLATIONS.fr, {'Read':'Lire'});
+Object.assign(window.SITE_TRANSLATIONS.ja, {'Read':'読む'});
+Object.assign(window.SITE_TRANSLATIONS.zh, {'Read':'阅读'});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Read':'閱讀'});

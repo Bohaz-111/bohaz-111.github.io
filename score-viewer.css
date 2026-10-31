@@ -11,4 +11,4 @@
 .score-viewer-surface canvas{display:block;max-width:none;margin:0 auto;background:white;box-shadow:0 2px 12px #00000012}
 @media(max-width:760px){.score-viewer-toolbar{gap:7px;padding:10px;font-size:10px}.score-viewer-zoom{width:100px}.score-viewer-close{margin-left:0}.score-viewer-surface{padding:8px}}
 
-.thesis-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.thesis-new-tab{padding:8px 12px}.cv-entry>.score-viewer{margin-top:4px}
+.thesis-new-tab{padding:0 5px;margin-left:4px;font-size:inherit;line-height:calc(1.7em - 2px);vertical-align:baseline;gap:4px}.cv-entry>.score-viewer{margin-top:4px}
