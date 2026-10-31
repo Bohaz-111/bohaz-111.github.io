@@ -120,3 +120,7 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {'Read thesis':'Lire le mémoire','Lo
 Object.assign(window.SITE_TRANSLATIONS.ja, {'Read thesis':'論文を読む','Loading thesis…':'論文を読み込み中…','The thesis could not be displayed.':'論文を表示できませんでした。'});
 Object.assign(window.SITE_TRANSLATIONS.zh, {'Read thesis':'阅读论文','Loading thesis…':'正在加载论文…','The thesis could not be displayed.':'无法显示论文。'});
 Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Read thesis':'閱讀論文','Loading thesis…':'正在載入論文…','The thesis could not be displayed.':'無法顯示論文。'});
+Object.assign(window.SITE_TRANSLATIONS.fr, {'Open in new tab':'Ouvrir dans un nouvel onglet'});
+Object.assign(window.SITE_TRANSLATIONS.ja, {'Open in new tab':'新しいタブで開く'});
+Object.assign(window.SITE_TRANSLATIONS.zh, {'Open in new tab':'在新标签页中打开'});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Open in new tab':'在新分頁中開啟'});
