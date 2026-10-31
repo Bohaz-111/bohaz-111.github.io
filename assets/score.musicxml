@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <score-partwise version="4.0">
   <work>
-    <work-title>IMG_2048</work-title>
+    <work-title>2</work-title>
   </work>
-  <movement-title>IMG_2048</movement-title>
+  <movement-title>2</movement-title>
   <identification>
+    <creator type="composer">Bohaz</creator>
     <encoding>
       <encoding-date>2026-10-31</encoding-date>
       <software>music21 v.10.5.2</software>
@@ -13,7 +14,7 @@
       <supports element="accidental" type="yes" />
     </encoding>
     <miscellaneous>
-      <miscellaneous-field name="dcterms:description">Piano transcription - draft. Source recording: IMG_2048.MOV.</miscellaneous-field>
+      <miscellaneous-field name="Composition year">2022</miscellaneous-field>
     </miscellaneous>
   </identification>
   <defaults>
@@ -41,15 +42,11 @@
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="600.0" default-y="1627.142857" font-family="Times New Roman" font-size="21" font-weight="bold" halign="center" justify="center" valign="top">IMG_2048</credit-words>
+    <credit-words default-x="600.0" default-y="1627.142857" font-family="Times New Roman" font-size="21" font-weight="bold" halign="center" justify="center" valign="top">2</credit-words>
   </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>
-    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Piano transcription - draft</credit-words>
-  </credit>
-  <credit page="1">
-    <credit-type>rights</credit-type>
-    <credit-words default-x="600.0" default-y="48" font-family="Times New Roman" font-size="8" halign="center" justify="center" valign="top">Source: IMG_2048.MOV | Rhythms regularized from the recorded performance</credit-words>
+    <credit-words default-x="600.0" default-y="1585.142857" font-family="Times New Roman" font-size="11" font-style="italic" halign="center" justify="center" valign="top">Bohaz · 2022</credit-words>
   </credit>
   <part-list>
     <score-part id="P20cb7605638f31cf2f4ad803608cfee6">
