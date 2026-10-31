@@ -7,9 +7,9 @@
   <meta name="description" content="A quiet personal space for notes, sheet music, and contacts.">
   <title>Notes & Music</title>
   <link rel="stylesheet" href="styles.css?v=clean-contacts-2026">
-  <script src="i18n-data.js?v=traditional-chinese-2026" defer></script>
+  <script src="i18n-data.js?v=introductions-2026" defer></script>
   <script src="i18n.js?v=traditional-chinese-2026" defer></script>
-  <script src="app.js?v=clean-contacts-2026" defer></script>
+  <script src="app.js?v=study-notes-2026" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,16 +44,12 @@
     </section>
 
     <section id="notes" class="page" hidden aria-labelledby="notes-title">
-      <header class="page-heading"><div><h1 id="notes-title">Notes</h1><p>I try to write these notes in a way that is most readable way, and tries to teach it to people</p></div><button id="new-note" class="button dark"><svg class="icon"><use href="#i-plus"/></svg>New note</button></header>
+      <header class="page-heading"><div><h1 id="notes-title">Notes</h1><p>I try to write these notes in a way that is most readable way, and tries to teach it to people. Please let me know if you find any errors, or a simpler/clearner arguments to some part.</p></div></header>
       <section class="study-library" aria-label="Notes"><div class="section-label"><span id="study-count" class="count-label"></span></div><p id="study-status" class="storage-note" role="status">Loading your notes…</p><ol id="study-list" class="study-list"></ol></section>
-      <div class="section-label notebook-heading"><h2>Your notebook</h2><span class="count-label">Personal thoughts & reminders</span></div>
-      <div id="notes-empty" class="empty-state"><svg class="empty-icon"><use href="#i-note"/></svg><h2>Start with a thought.</h2><p>This is your space to write it down.</p><button class="button" id="first-note">Create your first note</button></div>
-      <div id="notes-workspace" class="notes-workspace" hidden><div class="note-list" id="note-list" aria-label="Your notes"></div><div class="note-editor"><div class="editor-toolbar"><span id="note-status" role="status">Saved in this browser</span><button id="delete-note" class="icon-button" aria-label="Delete this note" title="Delete note"><svg class="icon"><use href="#i-trash"/></svg></button></div><label class="sr-only" for="note-title">Note title</label><input id="note-title" class="note-title-input" placeholder="Untitled note" maxlength="120"><label class="sr-only" for="note-body">Note content</label><textarea id="note-body" placeholder="Let your thoughts find a page…"></textarea></div></div>
-      <p class="storage-note">Your notes are saved in this browser.</p>
     </section>
 
     <section id="sheet-music" class="page" hidden aria-labelledby="music-title">
-      <header class="page-heading"><div><h1 id="music-title">Sheet Music</h1><p>I wrote these music when I had a lot free time, now I am getting busier, but I will try to find time write more. The recording were done in piano back in school, and they were out of tune, but it should give a rough idea of how I was intending it to be played.</p></div><span class="count-label">2 pieces</span></header>
+      <header class="page-heading"><div><h1 id="music-title">Sheet Music</h1><p>I wrote these music when I had a lot free time, now I am getting busier, but I will try to find time write more. The recording were done in piano back in school, and they were out of tune, but it should give a rough idea of how I was intending it to be played. They have not been named, I will think about what I should name them</p></div><span class="count-label">2 pieces</span></header>
       <article class="score-detail"><a class="score-preview" href="assets/img-2056/score.pdf?v=2026" target="_blank" rel="noopener" aria-label="Open the full piano score 1 PDF"><img src="assets/img-2056/score-cover.jpg?v=2026" alt="First page of piano score 1" width="900" height="1273"><span>View full score <span aria-hidden="true">↗</span></span></a><div class="score-information"><div class="piece-kicker"><span class="eyebrow">SOLO PIANO</span></div><h2>1</h2><p class="score-description">Bohaz · 2021</p><dl class="score-facts"><div><dt>Key</dt><dd>E-flat minor</dd></div><div><dt>Time</dt><dd>4/4</dd></div><div><dt>Tempo</dt><dd>80 BPM · Rubato</dd></div><div><dt>Length</dt><dd>65 measures · 4 pages</dd></div></dl><div class="audio-section"><h3>Listen to the recording</h3><audio controls preload="metadata" aria-label="Original recording of 1"><source src="assets/img-2056/original-recording.m4a" type="audio/mp4">Your browser does not support audio playback. <a href="assets/img-2056/original-recording.m4a">Download the audio.</a></audio><p>Original recording</p></div><a class="button dark download-button" href="assets/img-2056/score.pdf?v=2026" download="1.pdf"><svg class="icon"><use href="#i-download"/></svg>Download PDF</a><div class="file-links"><a href="assets/img-2056/score.musicxml?v=2026" download="1.musicxml">MusicXML</a><span>·</span><a href="assets/img-2056/performance.mid" download="1.mid">MIDI</a><span>·</span><a href="assets/img-2056/original-recording.m4a" download="1.m4a">Audio</a></div></div></article>
       <div class="score-detail"><a class="score-preview" href="assets/score.pdf?v=2026" target="_blank" rel="noopener" aria-label="Open the full piano score 2 PDF"><img src="assets/score-cover.jpg?v=2026" alt="First page of piano score 2" width="900" height="1273"><span>View full score <span aria-hidden="true">↗</span></span></a><div class="score-information"><div class="piece-kicker"><span class="eyebrow">SOLO PIANO</span></div><h2>2</h2><p class="score-description">Bohaz · 2022</p><dl class="score-facts"><div><dt>Key</dt><dd>A-flat major</dd></div><div><dt>Time</dt><dd>4/4</dd></div><div><dt>Tempo</dt><dd>84 BPM · Rubato</dd></div><div><dt>Length</dt><dd>74 measures · 5 pages</dd></div></dl><div class="audio-section"><h3>Listen to the recording</h3><audio controls preload="metadata" aria-label="Original recording of 2"><source src="assets/original-recording.m4a" type="audio/mp4">Your browser does not support audio playback. <a href="assets/original-recording.m4a">Download the audio.</a></audio><p>Original recording</p></div><a class="button dark download-button" href="assets/score.pdf?v=2026" download="2.pdf"><svg class="icon"><use href="#i-download"/></svg>Download PDF</a><div class="file-links"><a href="assets/score.musicxml?v=2026" download="2.musicxml">MusicXML</a><span>·</span><a href="assets/performance.mid" download="2.mid">MIDI</a><span>·</span><a href="assets/original-recording.m4a" download="2.m4a">Audio</a></div></div></div>
     </section>
@@ -106,6 +102,5 @@
     </section>
   </main>
 
-  <div id="toast" class="toast" hidden role="status"><span id="toast-message"></span><button id="undo-action" type="button">Undo</button></div>
 </body>
 </html>

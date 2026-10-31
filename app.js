@@ -2,26 +2,13 @@
 const $ = (selector) => document.querySelector(selector);
 const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts', cv: 'CV' };
 $('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
-const storageKey = 'notes-and-music.v1';
-let state = { notes: [], contacts: [] };
-try { const stored = JSON.parse(localStorage.getItem(storageKey)); if (stored && Array.isArray(stored.notes) && Array.isArray(stored.contacts)) state = stored; } catch {}
-let selectedNote = state.notes[0]?.id || null;
-let undo = null;
-let toastTimer;
 let studyNotes = [];
-const uid = () => typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-const dateLabel = (value) => new Date(value).toLocaleDateString(document.documentElement.lang, { month: 'short', day: 'numeric' });
-function save() {
-  try { localStorage.setItem(storageKey, JSON.stringify(state)); $('#note-status').textContent = 'Saved in this browser'; }
-  catch { $('#note-status').textContent = 'Could not save in this browser'; notify('Browser storage is unavailable. Keep a copy of your changes.'); }
-}
 function route() {
   const requested = location.hash.slice(1);
   const current = Object.hasOwn(labels, requested) ? requested : 'home';
   document.querySelectorAll('.page').forEach(page => page.hidden = page.id !== current);
   document.querySelectorAll('.nav-item').forEach(link => { const active = link.hash === `#${current}`; link.classList.toggle('active', active); if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
-  if (current === 'notes') renderNotes();
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 function element(tag, className, text) { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; }
@@ -59,39 +46,9 @@ async function loadStudyNotes() {
     retry.type = 'button'; retry.addEventListener('click', loadStudyNotes); status.append(retry);
   }
 }
-function notify(message, callback) {
-  clearTimeout(toastTimer); undo = callback || null;
-  $('#toast-message').textContent = message;
-  $('#undo-action').hidden = !undo;
-  $('#toast').hidden = false;
-  toastTimer = setTimeout(() => { $('#toast').hidden = true; undo = null; }, 8000);
-}
-$('#undo-action').addEventListener('click', () => { if (undo) undo(); undo = null; $('#toast').hidden = true; });
-function renderNoteList() {
-  const list = $('#note-list'); list.replaceChildren();
-  for (const note of state.notes) {
-    const button = element('button', `note-list-button${note.id === selectedNote ? ' selected' : ''}`);
-    button.type = 'button'; button.setAttribute('aria-pressed', String(note.id === selectedNote));
-    button.append(element('strong', '', note.title || window.translateSiteText('Untitled note')), element('small', '', dateLabel(note.updated)));
-    button.addEventListener('click', () => { selectedNote = note.id; renderNotes(); }); list.append(button);
-  }
-}
-function renderNotes() {
-  $('#notes-empty').hidden = state.notes.length > 0;
-  $('#notes-workspace').hidden = !state.notes.length;
-  if (!state.notes.length) return;
-  if (!state.notes.some(note => note.id === selectedNote)) selectedNote = state.notes[0].id;
-  renderNoteList(); const note = state.notes.find(note => note.id === selectedNote);
-  $('#note-title').value = note.title; $('#note-body').value = note.body;
-}
-function newNote() { const note = { id: uid(), title: '', body: '', updated: Date.now() }; state.notes.unshift(note); selectedNote = note.id; save(); renderNotes(); $('#notes-workspace').scrollIntoView({ block: 'start' }); $('#note-title').focus(); }
-$('#new-note').addEventListener('click', newNote); $('#first-note').addEventListener('click', newNote);
-for (const field of ['title', 'body']) $(`#note-${field}`).addEventListener('input', () => { const note = state.notes.find(n => n.id === selectedNote); if (!note) return; note[field] = $(`#note-${field}`).value; note.updated = Date.now(); save(); renderNoteList(); });
-$('#delete-note').addEventListener('click', () => { const index = state.notes.findIndex(n => n.id === selectedNote); if (index < 0) return; const [removed] = state.notes.splice(index, 1); selectedNote = state.notes[0]?.id || null; save(); renderNotes(); notify('Note deleted', () => { state.notes.splice(index, 0, removed); selectedNote = removed.id; save(); renderNotes(); }); });
 window.addEventListener('hashchange', route);
 window.addEventListener('site-language-change', () => {
   const current = Object.hasOwn(labels, location.hash.slice(1)) ? location.hash.slice(1) : 'home';
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
-  renderNoteList();
 });
 route(); loadStudyNotes();
