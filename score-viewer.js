@@ -16,8 +16,8 @@ async function library() {
   return pdfLibrary;
 }
 
-function setupScore(card, index) {
-  const preview = card.querySelector('.score-preview');
+function setupScore(card, index, selector = '.score-preview', isThesis = false) {
+  const preview = card.querySelector(selector);
   if (!preview) return;
   const viewer = document.createElement('section');
   viewer.className = 'score-viewer';
@@ -62,7 +62,7 @@ function setupScore(card, index) {
 
   function reportError() {
     if (viewer.hidden) return;
-    status.textContent = 'The score could not be displayed.';
+    status.textContent = isThesis ? 'The thesis could not be displayed.' : 'The score could not be displayed.';
     status.hidden = false;
   }
   function showPercent(value) {
@@ -147,13 +147,13 @@ function setupScore(card, index) {
     viewer.hidden = false;
     preview.setAttribute('aria-expanded', 'true');
     status.hidden = false;
-    status.textContent = 'Loading score…';
+    status.textContent = isThesis ? 'Loading thesis…' : 'Loading score…';
     currentPage = 1;
     fitWidth = true;
     try {
       const pdfjs = await library();
       if (version !== generation || viewer.hidden) return;
-      loadingTask = pdfjs.getDocument({ url: preview.href, cMapUrl: './vendor/pdfjs/cmaps/', cMapPacked: true, standardFontDataUrl: './vendor/pdfjs/standard_fonts/', wasmUrl: './vendor/pdfjs/wasm/' });
+      loadingTask = pdfjs.getDocument({ url: preview.href, cMapUrl: new URL('./vendor/pdfjs/cmaps/', document.baseURI).href, cMapPacked: true, standardFontDataUrl: new URL('./vendor/pdfjs/standard_fonts/', document.baseURI).href, wasmUrl: new URL('./vendor/pdfjs/wasm/', document.baseURI).href });
       const loaded = await loadingTask.promise;
       if (version !== generation || viewer.hidden) { await loaded.destroy(); return; }
       pdfDocument = loaded;
@@ -183,3 +183,6 @@ function setupScore(card, index) {
   });
 }
 document.querySelectorAll('#sheet-music .score-detail').forEach((card, index) => setupScore(card, index + 1));
+
+const thesisEntry = document.querySelector('.thesis-preview')?.closest('.cv-entry');
+if (thesisEntry) setupScore(thesisEntry, 'thesis', '.thesis-preview', true);

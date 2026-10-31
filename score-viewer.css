@@ -10,3 +10,5 @@
 .score-viewer-surface{max-width:100%;overflow:auto;padding:12px;text-align:center}
 .score-viewer-surface canvas{display:block;max-width:none;margin:0 auto;background:white;box-shadow:0 2px 12px #00000012}
 @media(max-width:760px){.score-viewer-toolbar{gap:7px;padding:10px;font-size:10px}.score-viewer-zoom{width:100px}.score-viewer-close{margin-left:0}.score-viewer-surface{padding:8px}}
+
+.thesis-preview{display:inline-flex;margin-top:12px}.cv-entry>.score-viewer{margin-top:4px}

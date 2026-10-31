@@ -114,3 +114,9 @@ window.SITE_TRANSLATIONS['zh-Hant']['Velocity Verlet'] = '速度韋爾萊算法'
     dictionary[updated] = dictionary[previous] + suffix;
   }
 }
+
+// Thesis viewer labels.
+Object.assign(window.SITE_TRANSLATIONS.fr, {'Read thesis':'Lire le mémoire','Loading thesis…':'Chargement du mémoire…','The thesis could not be displayed.':'Impossible d’afficher le mémoire.'});
+Object.assign(window.SITE_TRANSLATIONS.ja, {'Read thesis':'論文を読む','Loading thesis…':'論文を読み込み中…','The thesis could not be displayed.':'論文を表示できませんでした。'});
+Object.assign(window.SITE_TRANSLATIONS.zh, {'Read thesis':'阅读论文','Loading thesis…':'正在加载论文…','The thesis could not be displayed.':'无法显示论文。'});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Read thesis':'閱讀論文','Loading thesis…':'正在載入論文…','The thesis could not be displayed.':'無法顯示論文。'});
