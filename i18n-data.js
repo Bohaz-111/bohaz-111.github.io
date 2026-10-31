@@ -76,3 +76,9 @@ Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {
   'First page of piano score 3': '第3首鋼琴樂譜的第一頁',
   'Original recording of 3': '第3首的原始錄音'
 });
+
+// Note accompanying the recording of piece 3.
+window.SITE_TRANSLATIONS["fr"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "J’ai fini d’écrire ce morceau, mais je n’ai pas encore eu le temps de transcrire et d’enregistrer la suite.";
+window.SITE_TRANSLATIONS["ja"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "この曲は書き終えていますが、残りを採譜して録音する時間がまだありません。";
+window.SITE_TRANSLATIONS["zh"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "我已经写完了这首曲子，但还没有时间将剩下的部分记谱和录制下来。";
+window.SITE_TRANSLATIONS["zh-Hant"]["I have finished writing this, but haven't got time to transcribe the record the rest of it yet."] = "我已經寫完了這首曲子，但還沒有時間將剩下的部分記譜和錄製下來。";
