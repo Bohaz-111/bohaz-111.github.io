@@ -93,7 +93,7 @@ async function loadNote() {
   get('reader-progress').hidden = true;
   get('reader-progress').value = 0;
   try {
-    const response = await fetch('assets/notes/catalog.json');
+    const response = await fetch('assets/notes/catalog.json?v=note-titles-2026');
     if (!response.ok) throw new Error('The notes could not be loaded.');
     const notes = (await response.json()).sort((a, b) => a.number - b.number);
     const index = notes.findIndex(note => note.number === requested);

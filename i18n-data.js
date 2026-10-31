@@ -88,3 +88,13 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {'Loading score…':'Chargement de la
 Object.assign(window.SITE_TRANSLATIONS.ja, {'Loading score…':'楽譜を読み込み中…','The score could not be displayed.':'楽譜を表示できませんでした。'});
 Object.assign(window.SITE_TRANSLATIONS.zh, {'Loading score…':'正在加载乐谱…','The score could not be displayed.':'无法显示乐谱。'});
 Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'Loading score…':'正在載入樂譜…','The score could not be displayed.':'無法顯示樂譜。'});
+
+// Generalised Langevin Equation note title.
+window.SITE_TRANSLATIONS.fr['Generalised Langevin Equation'] = 'Équation de Langevin généralisée';
+window.SITE_TRANSLATIONS.ja['Generalised Langevin Equation'] = '一般化ランジュバン方程式';
+window.SITE_TRANSLATIONS.zh['Generalised Langevin Equation'] = '广义朗之万方程';
+window.SITE_TRANSLATIONS['zh-Hant']['Generalised Langevin Equation'] = '廣義朗之萬方程';
+
+// Use the requested Chinese transliteration for Verlet.
+window.SITE_TRANSLATIONS.zh['Velocity Verlet'] = '速度韦尔莱算法';
+window.SITE_TRANSLATIONS['zh-Hant']['Velocity Verlet'] = '速度韋爾萊算法';
