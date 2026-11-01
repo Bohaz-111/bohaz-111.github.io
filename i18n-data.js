@@ -133,3 +133,8 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {"100 BPM · Rubato":"100 BPM · Ruba
 Object.assign(window.SITE_TRANSLATIONS.ja, {"100 BPM · Rubato":"100 BPM · ルバート", "62 measures · 4 pages (transcribed)":"62小節 · 4ページ（採譜済み）"});
 Object.assign(window.SITE_TRANSLATIONS.zh, {"100 BPM · Rubato":"100 BPM · 自由速度", "62 measures · 4 pages (transcribed)":"62 小节 · 4 页（已转录）"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"100 BPM · Rubato":"100 BPM · 自由速度", "62 measures · 4 pages (transcribed)":"62 小節 · 4 頁（已轉譜）"});
+
+Object.assign(window.SITE_TRANSLATIONS.fr, {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'J’espère que ces notes et ces partitions seront utiles et intéressantes pour certaines personnes.'});
+Object.assign(window.SITE_TRANSLATIONS.ja, {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'これらのノートや楽譜を役に立つ、面白いと思ってくれる人がいればうれしいです。'});
+Object.assign(window.SITE_TRANSLATIONS.zh, {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'我希望有人会觉得这些笔记和乐谱有用、有趣。'});
+Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'我希望有人會覺得這些筆記和樂譜有用、有趣。'});
