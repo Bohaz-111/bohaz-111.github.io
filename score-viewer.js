@@ -59,6 +59,34 @@ function setupScore(card, index, selector = '.score-preview', isThesis = false) 
   let currentPage = 1;
   let fitWidth = true;
   let resizeTimer;
+  let pointerGesture;
+  let turnAnimation;
+  let turnVersion = 0;
+  let turning = false;
+  let wheelAmount = 0;
+  let wheelTriggered = false;
+  let wheelTimer;
+
+  // When the page is zoomed wider than its container, leave horizontal
+  // scrolling available and only turn at the relevant edge.
+  function atPageEdge(direction) {
+    if (surface.scrollWidth <= surface.clientWidth + 2) return true;
+    return direction > 0
+      ? surface.scrollLeft >= surface.scrollWidth - surface.clientWidth - 2
+      : surface.scrollLeft <= 2;
+  }
+  function canTurn(direction) {
+    return !!pdfDocument && !viewer.hidden && !turning &&
+      currentPage + direction >= 1 && currentPage + direction <= pdfDocument.numPages;
+  }
+  function stopTurn() {
+    ++turnVersion;
+    if (turnAnimation) turnAnimation.cancel();
+    turnAnimation = undefined;
+    turning = false;
+    canvas.style.transform = '';
+    canvas.classList.remove('score-viewer-dragging');
+  }
 
   function reportError() {
     if (viewer.hidden) return;
@@ -96,6 +124,7 @@ function setupScore(card, index, selector = '.score-preview', isThesis = false) 
     canvas.height = Math.ceil(viewport.height * ratio);
     canvas.style.width = `${Math.ceil(viewport.width)}px`;
     canvas.style.height = `${Math.ceil(viewport.height)}px`;
+    surface.classList.toggle('score-viewer-pannable', surface.scrollWidth > surface.clientWidth + 2);
     canvas.setAttribute('aria-label', `Page ${currentPage} of ${pdfDocument.numPages}`);
     pageInput.value = currentPage;
     pageInput.max = pdfDocument.numPages;
@@ -113,10 +142,53 @@ function setupScore(card, index, selector = '.score-preview', isThesis = false) 
   }
   function changePage(value) {
     if (!pdfDocument) return;
+    stopTurn();
     currentPage = Math.max(1, Math.min(pdfDocument.numPages, Math.floor(Number(value) || 1)));
     renderPage().catch(reportError);
   }
+  async function turnPage(direction, dragOffset = 0) {
+    if (!canTurn(direction)) return;
+    stopTurn();
+    const version = turnVersion;
+    turning = true;
+    const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches && typeof canvas.animate === 'function';
+    try {
+      if (motionAllowed) {
+        // Fold the current page towards the edge before drawing the new page.
+        turnAnimation = canvas.animate([
+          { transform: `translateX(${dragOffset}px) rotateY(0deg)`, opacity: 1 },
+          { transform: `translateX(${-direction * 35}px) rotateY(${direction * 9}deg)`, opacity: 0.25 }
+        ], { duration: 150, easing: 'ease-in', fill: 'forwards' });
+        await turnAnimation.finished;
+      }
+      if (version !== turnVersion || viewer.hidden || !pdfDocument) return;
+      currentPage += direction;
+      await renderPage();
+      if (version !== turnVersion || viewer.hidden || !pdfDocument) return;
+      if (turnAnimation) { turnAnimation.cancel(); turnAnimation = undefined; }
+      if (motionAllowed) {
+        turnAnimation = canvas.animate([
+          { transform: `translateX(${direction * 35}px) rotateY(${-direction * 9}deg)`, opacity: 0.25 },
+          { transform: 'translateX(0) rotateY(0deg)', opacity: 1 }
+        ], { duration: 190, easing: 'ease-out' });
+        await turnAnimation.finished;
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') reportError();
+    } finally {
+      if (version === turnVersion) {
+        if (turnAnimation) turnAnimation.cancel();
+        turnAnimation = undefined;
+        turning = false;
+      }
+    }
+  }
   async function close() {
+    stopTurn();
+    pointerGesture = undefined;
+    clearTimeout(wheelTimer);
+    wheelAmount = 0;
+    wheelTriggered = false;
     const version = ++generation;
     viewer.hidden = true;
     preview.setAttribute('aria-expanded', 'false');
@@ -173,13 +245,72 @@ function setupScore(card, index, selector = '.score-preview', isThesis = false) 
   previous.addEventListener('click', () => changePage(currentPage - 1));
   next.addEventListener('click', () => changePage(currentPage + 1));
   pageInput.addEventListener('change', () => changePage(pageInput.value));
-  zoom.addEventListener('input', () => { fitWidth = false; showPercent(Number(zoom.value)); renderPage().catch(reportError); });
-  fit.addEventListener('click', () => { fitWidth = true; renderPage().catch(reportError); });
+  zoom.addEventListener('input', () => { stopTurn(); fitWidth = false; showPercent(Number(zoom.value)); renderPage().catch(reportError); });
+  fit.addEventListener('click', () => { stopTurn(); fitWidth = true; renderPage().catch(reportError); });
+  canvas.addEventListener('pointerdown', event => {
+    if (!event.isPrimary) { pointerGesture = undefined; canvas.style.transform = ''; canvas.classList.remove('score-viewer-dragging'); return; }
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    if (!pdfDocument || viewer.hidden || turning) return;
+    // Let touch devices pan naturally when the zoomed page overflows.
+    if (event.pointerType !== 'mouse' && surface.classList.contains('score-viewer-pannable')) return;
+    pointerGesture = { id: event.pointerId, x: event.clientX, y: event.clientY, active: false, offset: 0 };
+  });
+  canvas.addEventListener('pointermove', event => {
+    if (!pointerGesture || pointerGesture.id !== event.pointerId) return;
+    const dx = event.clientX - pointerGesture.x;
+    const dy = event.clientY - pointerGesture.y;
+    if (!pointerGesture.active) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) >= Math.abs(dx)) { pointerGesture = undefined; return; }
+      if (Math.abs(dx) < 12 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
+      const direction = dx < 0 ? 1 : -1;
+      if (!atPageEdge(direction) || !canTurn(direction)) { pointerGesture = undefined; return; }
+      pointerGesture.active = true;
+      canvas.setPointerCapture(event.pointerId);
+      canvas.classList.add('score-viewer-dragging');
+    }
+    event.preventDefault();
+    pointerGesture.offset = Math.max(-45, Math.min(45, dx * 0.35));
+    canvas.style.transform = `translateX(${pointerGesture.offset}px)`;
+  });
+  function endPointer(event, cancelled = false) {
+    if (!pointerGesture || pointerGesture.id !== event.pointerId) return;
+    const gesture = pointerGesture;
+    pointerGesture = undefined;
+    canvas.classList.remove('score-viewer-dragging');
+    canvas.style.transform = '';
+    if (!cancelled && gesture.active && Math.abs(event.clientX - gesture.x) >= 50) {
+      const direction = event.clientX < gesture.x ? 1 : -1;
+      if (atPageEdge(direction) && canTurn(direction)) turnPage(direction, gesture.offset);
+    }
+  }
+  canvas.addEventListener('pointerup', event => endPointer(event));
+  canvas.addEventListener('pointercancel', event => endPointer(event, true));
+  canvas.addEventListener('lostpointercapture', event => endPointer(event, true));
+  surface.addEventListener('wheel', event => {
+    if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey || !pdfDocument || viewer.hidden) return;
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? surface.clientWidth : 1;
+    const dx = event.deltaX * unit;
+    const dy = event.deltaY * unit;
+    if (Math.abs(dx) < 1 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
+    const direction = dx > 0 ? 1 : -1;
+    if (!atPageEdge(direction) || (!wheelTriggered && !canTurn(direction))) return;
+    event.preventDefault();
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => { wheelAmount = 0; wheelTriggered = false; }, 220);
+    if (wheelTriggered) return;
+    if (wheelAmount && Math.sign(wheelAmount) !== Math.sign(dx)) wheelAmount = 0;
+    wheelAmount += dx;
+    if (Math.abs(wheelAmount) >= 70) {
+      wheelTriggered = true;
+      wheelAmount = 0;
+      turnPage(direction);
+    }
+  }, { passive: false });
   $('.score-viewer-close').addEventListener('click', async () => { const request = ++openVersion; await close(); if (request === openVersion && viewer.hidden) preview.focus(); });
   window.addEventListener('resize', () => {
     if (!fitWidth || viewer.hidden) return;
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => renderPage().catch(reportError), 180);
+    resizeTimer = setTimeout(() => { stopTurn(); renderPage().catch(reportError); }, 180);
   });
 }
 document.querySelectorAll('#sheet-music .score-detail').forEach((card, index) => setupScore(card, index + 1));

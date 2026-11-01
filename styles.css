@@ -51,3 +51,5 @@ html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-s
 }
 
 .musicxml-download{margin-bottom:18px}
+
+.score-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:18px}.score-actions .musicxml-download{margin-bottom:0}
