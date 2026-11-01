@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="score-viewer.css?v=thesis-read-inline-2026">
   <script src="i18n-data.js?v=piece-3-facts-2026" defer></script>
   <script src="i18n.js?v=sidebar-language-2026" defer></script>
-  <script src="app.js?v=note-titles-2026" defer></script>
+  <script src="app.js?v=remove-cv-2026" defer></script>
   <script src="score-viewer.js?v=thesis-2026" type="module"></script>
 </head>
 <body>
@@ -21,7 +21,6 @@
     <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H5a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9zM14 3v6h6M8 13h8M8 17h6"/></symbol>
     <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="17" cy="16" rx="3" ry="3"/></symbol>
     <symbol id="i-contact" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
-    <symbol id="i-cv" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
@@ -37,7 +36,6 @@
       <a href="#notes" class="nav-item"><svg class="icon"><use href="#i-note"/></svg><span>Notes</span></a>
       <a href="#sheet-music" class="nav-item"><svg class="icon"><use href="#i-music"/></svg><span>Sheet Music</span></a>
       <a href="#contacts" class="nav-item"><svg class="icon"><use href="#i-contact"/></svg><span>Contacts</span></a>
-      <a href="#cv" class="nav-item"><svg class="icon"><use href="#i-cv"/></svg><span>CV</span></a>
     </nav>
   </aside>
 
@@ -71,39 +69,6 @@
       </section>
     </section>
 
-    <section id="cv" class="page" hidden aria-labelledby="cv-title">
-      <header class="page-heading"><h1 id="cv-title">CV</h1></header>
-      <section class="cv-section" aria-labelledby="cv-education"><h2 id="cv-education">Education</h2>
-        <ol class="cv-list">
-          <li class="cv-entry"><span class="cv-date">2026–</span><div><div class="cv-heading"><h3>PhD in Chemistry and Chemical Engineering</h3><span class="cv-place">Lausanne, Switzerland</span></div><p class="cv-institution">EPFL</p><p>Supervisor: Prof. Michele Ceriotti</p></div></li>
-          <li class="cv-entry"><span class="cv-date">2022–2026</span><div><div class="cv-heading"><h3>MChem in Chemistry</h3><span class="cv-place">Oxford, England</span></div><p class="cv-institution">Christ Church, University of Oxford</p><p>First Class Honours</p><p>Part II (Year 4) Supervisor: Prof. David E. Manolopoulos FRS</p><p><span>Thesis: Quantum Nuclear Effects on the Phonons of Solid Hydrogen</span> <a class="button thesis-new-tab" href="assets/thesis/ph2.pdf" target="_blank" rel="noopener noreferrer"><span>Read</span><span aria-hidden="true">↗</span></a></p></div></li>
-          <li class="cv-entry"><span class="cv-date">2018–2022</span><div><div class="cv-heading"><h3>Canford School</h3><span class="cv-place">Dorset, England</span></div><p>A* A* A* A* in Chemistry, Physics, Maths and Further Maths</p></div></li>
-        </ol>
-      </section>
-      <section class="cv-section" aria-labelledby="cv-experience"><h2 id="cv-experience">Experience</h2>
-        <ol class="cv-list">
-          <li class="cv-entry"><span class="cv-date">2026–</span><div><h3>Doctoral Assistant</h3><p class="cv-institution">Institute of Materials, School of Engineering, EPFL</p></div></li>
-          <li class="cv-entry"><span class="cv-date">2025–2026</span><div><h3>Part II Student Researcher</h3><p class="cv-institution">Department of Chemistry, University of Oxford</p></div></li>
-          <li class="cv-entry"><span class="cv-date">2025–2026</span><div><h3>Student Ambassador</h3><p class="cv-institution">University of Oxford</p></div></li>
-        </ol>
-      </section>
-      <section class="cv-section" aria-labelledby="cv-awards"><h2 id="cv-awards">Selected Prizes and Awards</h2>
-        <ol class="cv-list cv-awards">
-          <li class="cv-entry"><span class="cv-date">2026</span><div>Top Prize, Part II Prizes in Physical and Theoretical chemistry, Department of Chemistry, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2026</span><div>Roach Prize, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2026</span><div>Roach Exam Prize, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2026</span><div>Final Honours School Book Prize, Christ Church University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2025</span><div>Clifford Smith Prize, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2023</span><div>Roger Prentice Prize, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2023</span><div>First Public Examination Book Prize, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2023–2026</span><div>Academic Scholarship, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2023–2026</span><div>Collection Prize, Christ Church, University of Oxford</div></li>
-          <li class="cv-entry"><span class="cv-date">2022</span><div>Gold Certificate, UK Chemistry Olympiad</div></li>
-          <li class="cv-entry"><span class="cv-date">2021</span><div>Gold Certificate, UK Chemistry Olympiad</div></li>
-          <li class="cv-entry"><span class="cv-date">2021</span><div>Roentgenium Award, Cambridge Chemistry Challenge, University of Cambridge</div></li>
-        </ol>
-      </section>
-    </section>
   </main>
 
 </body>

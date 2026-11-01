@@ -1,6 +1,6 @@
 'use strict';
 const $ = (selector) => document.querySelector(selector);
-const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts', cv: 'CV' };
+const labels = { home: 'Home', notes: 'Notes', 'sheet-music': 'Sheet Music', contacts: 'Contacts' };
 $('.skip-link').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
 let studyNotes = [];
 function route() {
