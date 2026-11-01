@@ -138,3 +138,8 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {'I hope there are people out there w
 Object.assign(window.SITE_TRANSLATIONS.ja, {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'これらのノートや楽譜を役に立つ、面白いと思ってくれる人がいればうれしいです。'});
 Object.assign(window.SITE_TRANSLATIONS.zh, {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'我希望有人会觉得这些笔记和乐谱有用、有趣。'});
 Object.assign(window.SITE_TRANSLATIONS['zh-Hant'], {'I hope there are people out there who will find these notes and sheet music useful and interesting.':'我希望有人會覺得這些筆記和樂譜有用、有趣。'});
+
+Object.assign(window.SITE_TRANSLATIONS.fr, {"Download MusicXML":"Télécharger MusicXML"});
+Object.assign(window.SITE_TRANSLATIONS.ja, {"Download MusicXML":"MusicXMLをダウンロード"});
+Object.assign(window.SITE_TRANSLATIONS.zh, {"Download MusicXML":"下载 MusicXML"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Download MusicXML":"下載 MusicXML"});

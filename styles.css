@@ -49,3 +49,5 @@ html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-s
   .sidebar .nav-item,.sidebar-language .language-selector span,.sidebar-language .language-selector select{font-size:11px}
   .score-facts>div{font-size:var(--control-size)}
 }
+
+.musicxml-download{margin-bottom:18px}
