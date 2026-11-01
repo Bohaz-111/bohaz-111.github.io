@@ -28,3 +28,24 @@ html[lang="ja"]{--cjk-font:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP
 html[lang="zh-Hans"]{--cjk-font:"Kaiti SC",STKaiti,KaiTi,"KaiTi_GB2312","楷体",serif}
 html[lang="zh-Hant"]{--cjk-font:"Kaiti TC",BiauKai,"DFKai-SB","標楷體",STKaiti,KaiTi,serif}
 html:is([lang="ja"],[lang="zh-Hans"],[lang="zh-Hant"]) body,html:is([lang="ja"],[lang="zh-Hans"],[lang="zh-Hant"]) body *{font-family:var(--cjk-font)!important}
+
+/* Keep reading text comfortable in every language; Kai characters benefit from a little more size. */
+:root{--reading-size:15px;--item-size:15px;--supporting-size:12px;--control-size:13px}
+html:is([lang="zh-Hans"],[lang="zh-Hant"]){--reading-size:17px;--item-size:16px;--supporting-size:13px;--control-size:14px}
+.intro-copy,.page-heading p:not(.eyebrow){font-size:var(--reading-size);line-height:1.8}
+.intro-copy{max-width:74ch}
+.study-detail strong{font-size:var(--item-size)}
+.study-detail small,.study-number,.study-view,.storage-note{font-size:var(--supporting-size)}
+.nav-item,.language-selector,.button{font-size:var(--control-size)}
+.connect-list li,.score-description,.score-facts>div,.audio-section h3{font-size:var(--control-size)}
+.audio-section>p,.score-preview>span{font-size:var(--supporting-size)}
+.audio-section>p[style]{font-size:var(--supporting-size)!important}
+html .reader-back,html .reader-nav,html .pdf-toolbar,html .score-viewer-toolbar{font-size:var(--control-size)}
+html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-status{font-size:var(--supporting-size)}
+@media(max-width:760px){
+  :root{--reading-size:14px;--item-size:14px;--supporting-size:11px;--control-size:12px}
+  html:is([lang="zh-Hans"],[lang="zh-Hant"]){--reading-size:16px;--item-size:15px;--supporting-size:12px;--control-size:13px}
+  .intro-copy{max-width:none}
+  .sidebar .nav-item,.sidebar-language .language-selector span,.sidebar-language .language-selector select{font-size:11px}
+  .score-facts>div{font-size:var(--control-size)}
+}
