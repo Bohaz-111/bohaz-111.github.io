@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <score-partwise version="4.0">
   <work>
-    <work-title>3</work-title>
+    <work-title>The Turning Sky</work-title>
   </work>
-  <movement-title>3</movement-title>
+  <movement-title>The Turning Sky</movement-title>
   <identification>
     <creator type="composer">Bohaz</creator>
     <encoding>
@@ -42,7 +42,7 @@
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="600.0" default-y="1627.142857" font-family="Times New Roman" font-size="21" font-weight="bold" halign="center" justify="center" valign="top">3</credit-words>
+    <credit-words default-x="600.0" default-y="1627.142857" font-family="Times New Roman" font-size="21" font-weight="bold" halign="center" justify="center" valign="top">The Turning Sky</credit-words>
   </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>
