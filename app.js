@@ -51,3 +51,13 @@ window.addEventListener('site-language-change', () => {
   document.title = `${window.translateSiteText(labels[current])} — Notes & Music`;
 });
 route(); loadStudyNotes();
+
+// Keep each recording’s repeat control independent.
+document.querySelectorAll('.audio-loop').forEach(button => {
+  const audio = document.getElementById(button.getAttribute('aria-controls'));
+  if (!audio) return;
+  button.addEventListener('click', () => {
+    audio.loop = !audio.loop;
+    button.setAttribute('aria-pressed', String(audio.loop));
+  });
+});

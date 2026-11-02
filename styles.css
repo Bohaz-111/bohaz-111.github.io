@@ -53,3 +53,5 @@ html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-s
 .musicxml-download{margin-bottom:18px}
 
 .score-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:18px}.score-actions .musicxml-download{margin-bottom:0}
+
+.audio-controls{display:flex;align-items:center;gap:8px}.audio-controls audio{flex:1;min-width:0}.audio-controls .audio-loop{flex:none;white-space:nowrap}.audio-loop[aria-pressed="true"]{background:#242624;border-color:#242624;color:#fff}
