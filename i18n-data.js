@@ -163,3 +163,8 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {"Loop":"Répéter"});
 Object.assign(window.SITE_TRANSLATIONS.ja, {"Loop":"繰り返し"});
 Object.assign(window.SITE_TRANSLATIONS.zh, {"Loop":"循环播放"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Loop":"循環播放"});
+
+Object.assign(window.SITE_TRANSLATIONS.fr, {"Download CV":"Télécharger le CV"});
+Object.assign(window.SITE_TRANSLATIONS.ja, {"Download CV":"履歴書をダウンロード"});
+Object.assign(window.SITE_TRANSLATIONS.zh, {"Download CV":"下载简历"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Download CV":"下載履歷"});
