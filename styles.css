@@ -57,3 +57,5 @@ html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-s
 .audio-controls{display:flex;align-items:center;gap:8px}.audio-controls audio{flex:1;min-width:0}.audio-controls .audio-loop{flex:none;white-space:nowrap}.audio-loop[aria-pressed="true"]{background:#242624;border-color:#242624;color:#fff}
 
 .contact-cv{margin-top:20px}
+
+.study-number.study-category{width:auto;min-width:44px;padding:0 8px}

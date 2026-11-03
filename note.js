@@ -10,6 +10,7 @@ let currentPage = 1;
 let renderTask;
 let renderVersion = 0;
 let fitWidth = true;
+let readerLabel = `N${requested}`;
 
 async function renderPage() {
   if (!pdfDocument) return;
@@ -93,20 +94,21 @@ async function loadNote() {
   get('reader-progress').hidden = true;
   get('reader-progress').value = 0;
   try {
-    const response = await fetch('assets/notes/catalog.json?v=note-titles-2026');
+    const response = await fetch('assets/notes/catalog.json?v=thesis-2026');
     if (!response.ok) throw new Error('The notes could not be loaded.');
     const notes = (await response.json()).sort((a, b) => a.number - b.number);
     const index = notes.findIndex(note => note.number === requested);
     if (index < 0) throw new Error('This note was not found. Return to All notes to choose one.');
     const note = notes[index];
-    document.title = `N${note.number} · ${window.translateSiteText(note.title)} — Notes & Music`;
-    get('reader-number').textContent = `NOTE N${note.number}`;
+    readerLabel = note.label || `N${note.number}`;
+    document.title = `${window.translateSiteText(readerLabel)} · ${window.translateSiteText(note.title)} — Notes & Music`;
+    get('reader-number').textContent = note.label || `NOTE N${note.number}`;
     get('reader-title').textContent = note.title;
     get('reader-meta').textContent = `${note.pages} ${note.pages === 1 ? 'page' : 'pages'} · PDF`;
     get('reader-position').textContent = `${index + 1} of ${notes.length}`;
     for (const [id, adjacent] of [['reader-prev', notes[index - 1]], ['reader-next', notes[index + 1]]]) {
       const link = get(id); link.hidden = !adjacent;
-      if (adjacent) { link.href = `note.html?n=${adjacent.number}`; link.title = `N${adjacent.number}: ${adjacent.title}`; }
+      if (adjacent) { link.href = `note.html?n=${adjacent.number}`; link.title = `${adjacent.label || `N${adjacent.number}`}: ${adjacent.title}`; }
     }
     const url = note.url || await readLargePdf(note);
     const open = get('reader-open'); open.href = url; open.hidden = false;
@@ -142,7 +144,7 @@ get('zoom-fit').addEventListener('click', () => {
 });
 window.addEventListener('site-language-change', () => {
   const title = get('reader-title').textContent;
-  if (requested && title) document.title = `N${requested} · ${title} — Notes & Music`;
+  if (requested && title) document.title = `${window.translateSiteText(readerLabel)} · ${title} — Notes & Music`;
 });
 let resizeTimer;
 window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => renderPage().catch(showError), 180); });

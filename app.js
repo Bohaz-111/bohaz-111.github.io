@@ -17,7 +17,7 @@ async function loadStudyNotes() {
   const status = $('#study-status');
   status.textContent = 'Loading your notes…';
   try {
-    const response = await fetch('assets/notes/catalog.json?v=note-titles-2026');
+    const response = await fetch('assets/notes/catalog.json?v=thesis-2026');
     if (!response.ok) throw new Error('Notes unavailable');
     studyNotes = (await response.json()).sort((a, b) => a.number - b.number);
     const list = $('#study-list'); list.replaceChildren();
@@ -25,15 +25,16 @@ async function loadStudyNotes() {
       const row = element('li', 'study-row');
       const title = element('a', 'study-title-link');
       title.href = `note.html?n=${note.number}`;
-      title.append(element('span', 'study-number', `N${note.number}`));
+      const noteLabel = note.label || `N${note.number}`;
+      title.append(element('span', note.label ? 'study-number study-category' : 'study-number', noteLabel));
       const detail = element('span', 'study-detail');
       detail.append(element('strong', '', note.title));
       const size = note.bytes >= 1000000 ? `${(note.bytes / 1000000).toFixed(1)} MB` : `${Math.round(note.bytes / 1000)} KB`;
       detail.append(element('small', '', `${note.pages} ${note.pages === 1 ? 'page' : 'pages'} · PDF · ${size}`));
       title.append(detail); row.append(title);
       const actions = element('div', 'study-actions');
-      const view = element('a', 'study-view', 'View'); view.href = title.href; view.setAttribute('aria-label', `View N${note.number}: ${note.title}`);
-      const download = element('a', 'icon-button'); download.append(icon('download')); download.setAttribute('aria-label', `Download N${note.number}: ${note.title}`); download.title = 'Download PDF';
+      const view = element('a', 'study-view', 'View'); view.href = title.href; view.setAttribute('aria-label', `View ${noteLabel}: ${note.title}`);
+      const download = element('a', 'icon-button'); download.append(icon('download')); download.setAttribute('aria-label', `Download ${noteLabel}: ${note.title}`); download.title = 'Download PDF';
       if (note.url) { download.href = note.url; download.download = note.originalFilename; }
       else { download.href = `${title.href}&download=1`; }
       actions.append(view, download); row.append(actions); list.append(row);

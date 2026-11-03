@@ -191,5 +191,15 @@
     "bytes": 144022,
     "sha256": "c9dec023bb8b2ea79390ed1cd73fd6b379c02858228c81d21d1c1ebc541f2be9",
     "url": "assets/notes/n20-chemical-reaction-rates.pdf"
+  },
+  {
+    "number": 21,
+    "label": "Thesis",
+    "title": "Nuclear Quantum Effects on the Phonons of Solid Hydrogen",
+    "originalFilename": "pH2.pdf",
+    "pages": 119,
+    "bytes": 19567344,
+    "sha256": "2e9969aa8a0fe9796791901548af7522772372e01f7f34e2078873f94a6264d7",
+    "url": "assets/thesis/ph2.pdf"
   }
 ]

@@ -168,3 +168,9 @@ Object.assign(window.SITE_TRANSLATIONS.fr, {"Download CV":"Télécharger le CV"}
 Object.assign(window.SITE_TRANSLATIONS.ja, {"Download CV":"履歴書をダウンロード"});
 Object.assign(window.SITE_TRANSLATIONS.zh, {"Download CV":"下载简历"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Download CV":"下載履歷"});
+
+// Thesis entry in the notes library.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Thesis": "Mémoire", "Nuclear Quantum Effects on the Phonons of Solid Hydrogen": "Effets quantiques nucléaires sur les phonons de l’hydrogène solide", "View Thesis: {title}": "Voir Mémoire : {title}", "Download Thesis: {title}": "Télécharger Mémoire : {title}"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Thesis": "卒業論文", "Nuclear Quantum Effects on the Phonons of Solid Hydrogen": "固体水素のフォノンにおける原子核の量子効果", "View Thesis: {title}": "卒業論文：{title}を表示", "Download Thesis: {title}": "卒業論文：{title}をダウンロード"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Thesis": "论文", "Nuclear Quantum Effects on the Phonons of Solid Hydrogen": "固氢声子的核量子效应", "View Thesis: {title}": "查看论文：{title}", "Download Thesis: {title}": "下载论文：{title}"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Thesis": "論文", "Nuclear Quantum Effects on the Phonons of Solid Hydrogen": "固氫聲子的核量子效應", "View Thesis: {title}": "檢視論文：{title}", "Download Thesis: {title}": "下載論文：{title}"});
