@@ -59,3 +59,14 @@ html .reader-title>p:last-child,html .reader-title .eyebrow,html .score-viewer-s
 .contact-cv{margin-top:20px}
 
 .study-number.study-category{width:auto;min-width:44px;padding:0 8px}
+
+
+/* Recent website updates */
+#home .home-intro{padding-bottom:36px}
+.home-updates{max-width:74ch}
+.home-updates h2{font-size:var(--item-size);font-weight:600;margin:0 0 12px}
+.home-update-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.home-update-list li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:var(--control-size);line-height:1.6}
+.home-update-list time{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.home-update-list a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:500px){#home .home-intro{padding-bottom:28px}.home-update-list li{grid-template-columns:90px minmax(0,1fr);gap:10px}}
