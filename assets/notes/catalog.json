@@ -193,6 +193,17 @@
     "url": "assets/notes/n20-chemical-reaction-rates.pdf"
   },
   {
+    "number": 22,
+    "order": 21,
+    "label": "N21",
+    "title": "Channel Coding",
+    "originalFilename": "N21_Channel_coding.pdf",
+    "pages": 3,
+    "bytes": 120375,
+    "sha256": "a7865cd943870c34d88c9e56eef0cf859c5b55b08f822c84f24188761bca6638",
+    "url": "assets/notes/n21-channel-coding.pdf"
+  },
+  {
     "number": 21,
     "label": "Thesis",
     "title": "Nuclear Quantum Effects on the Phonons of Solid Hydrogen",
@@ -200,6 +211,7 @@
     "pages": 119,
     "bytes": 19567344,
     "sha256": "2e9969aa8a0fe9796791901548af7522772372e01f7f34e2078873f94a6264d7",
-    "url": "assets/thesis/ph2.pdf"
+    "url": "assets/thesis/ph2.pdf",
+    "order": 22
   }
 ]

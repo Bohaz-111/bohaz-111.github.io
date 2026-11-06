@@ -181,3 +181,9 @@ Object.assign(window.SITE_TRANSLATIONS["fr"], {"Recent updates": "Mises à jour 
 Object.assign(window.SITE_TRANSLATIONS["ja"], {"Recent updates": "最近の更新", "Updated Principles of Machine Learning": "機械学習の原理を更新", "Added my thesis to Notes": "卒業論文をノートに追加", "Named the second and third piano pieces": "2曲目と3曲目のピアノ曲に題名を追加", "Added MusicXML downloads for the piano pieces": "ピアノ曲のMusicXMLダウンロードを追加", "Website created": "ウェブサイトを開設"});
 Object.assign(window.SITE_TRANSLATIONS["zh"], {"Recent updates": "最近更新", "Updated Principles of Machine Learning": "更新《机器学习原理》", "Added my thesis to Notes": "将论文添加到笔记中", "Named the second and third piano pieces": "为第二、第三首钢琴曲命名", "Added MusicXML downloads for the piano pieces": "添加钢琴曲的 MusicXML 下载", "Website created": "网站创建"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Recent updates": "最近更新", "Updated Principles of Machine Learning": "更新《機器學習原理》", "Added my thesis to Notes": "將論文加入筆記", "Named the second and third piano pieces": "為第二、第三首鋼琴曲命名", "Added MusicXML downloads for the piano pieces": "新增鋼琴曲的 MusicXML 下載", "Website created": "網站建立"});
+
+// Channel coding note.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Channel Coding": "Codage de canal", "Added Channel Coding notes": "Ajout de la note sur le codage de canal"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Channel Coding": "通信路符号化", "Added Channel Coding notes": "通信路符号化のノートを追加"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Channel Coding": "信道编码", "Added Channel Coding notes": "添加信道编码笔记"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Channel Coding": "信道編碼", "Added Channel Coding notes": "新增信道編碼筆記"});
