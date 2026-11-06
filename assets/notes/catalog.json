@@ -204,6 +204,17 @@
     "url": "assets/notes/n21-channel-coding.pdf"
   },
   {
+    "number": 23,
+    "order": 22,
+    "label": "N22",
+    "title": "Laplace Eigenvalue Problem",
+    "originalFilename": "N22_Laplace_eigenvalue_problem.pdf",
+    "pages": 5,
+    "bytes": 150302,
+    "sha256": "ec67dbc34ebbf073761b87c7e3f3c7426cd220735410f14695e80a9b1add7c1b",
+    "url": "assets/notes/n22-laplace-eigenvalue-problem.pdf"
+  },
+  {
     "number": 21,
     "label": "Thesis",
     "title": "Nuclear Quantum Effects on the Phonons of Solid Hydrogen",
@@ -212,6 +223,6 @@
     "bytes": 19567344,
     "sha256": "2e9969aa8a0fe9796791901548af7522772372e01f7f34e2078873f94a6264d7",
     "url": "assets/thesis/ph2.pdf",
-    "order": 22
+    "order": 23
   }
 ]

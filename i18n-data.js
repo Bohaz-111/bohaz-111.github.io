@@ -187,3 +187,9 @@ Object.assign(window.SITE_TRANSLATIONS["fr"], {"Channel Coding": "Codage de cana
 Object.assign(window.SITE_TRANSLATIONS["ja"], {"Channel Coding": "通信路符号化", "Added Channel Coding notes": "通信路符号化のノートを追加"});
 Object.assign(window.SITE_TRANSLATIONS["zh"], {"Channel Coding": "信道编码", "Added Channel Coding notes": "添加信道编码笔记"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Channel Coding": "信道編碼", "Added Channel Coding notes": "新增信道編碼筆記"});
+
+// Laplace eigenvalue problem note.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Laplace Eigenvalue Problem": "Problème aux valeurs propres du laplacien", "Added Laplace Eigenvalue Problem notes": "Ajout de la note sur le problème aux valeurs propres du laplacien"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Laplace Eigenvalue Problem": "ラプラス作用素の固有値問題", "Added Laplace Eigenvalue Problem notes": "ラプラス作用素の固有値問題のノートを追加"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Laplace Eigenvalue Problem": "拉普拉斯算符的本征值问题", "Added Laplace Eigenvalue Problem notes": "添加拉普拉斯算符的本征值问题笔记"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Laplace Eigenvalue Problem": "拉普拉斯算符的特徵值問題", "Added Laplace Eigenvalue Problem notes": "新增拉普拉斯算符的特徵值問題筆記"});
