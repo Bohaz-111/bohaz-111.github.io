@@ -193,3 +193,9 @@ Object.assign(window.SITE_TRANSLATIONS["fr"], {"Laplace Eigenvalue Problem": "Pr
 Object.assign(window.SITE_TRANSLATIONS["ja"], {"Laplace Eigenvalue Problem": "ラプラス作用素の固有値問題", "Added Laplace Eigenvalue Problem notes": "ラプラス作用素の固有値問題のノートを追加"});
 Object.assign(window.SITE_TRANSLATIONS["zh"], {"Laplace Eigenvalue Problem": "拉普拉斯算符的本征值问题", "Added Laplace Eigenvalue Problem notes": "添加拉普拉斯算符的本征值问题笔记"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Laplace Eigenvalue Problem": "拉普拉斯算符的特徵值問題", "Added Laplace Eigenvalue Problem notes": "新增拉普拉斯算符的特徵值問題筆記"});
+
+// N16 title.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Machine Learning for Chemists": "Apprentissage automatique pour les chimistes", "Updated Machine Learning for Chemists": "Mise à jour de Apprentissage automatique pour les chimistes"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Machine Learning for Chemists": "化学者のための機械学習", "Updated Machine Learning for Chemists": "「化学者のための機械学習」を更新"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Machine Learning for Chemists": "面向化学家的机器学习", "Updated Machine Learning for Chemists": "更新《面向化学家的机器学习》"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Machine Learning for Chemists": "面向化學家的機器學習", "Updated Machine Learning for Chemists": "更新《面向化學家的機器學習》"});

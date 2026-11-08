@@ -17,7 +17,7 @@ async function loadStudyNotes() {
   const status = $('#study-status');
   status.textContent = 'Loading your notes…';
   try {
-    const response = await fetch('assets/notes/catalog.json?v=n16-20261108b');
+    const response = await fetch('assets/notes/catalog.json?v=n16-title-20261108');
     if (!response.ok) throw new Error('Notes unavailable');
     studyNotes = (await response.json()).sort((a, b) => (a.order ?? a.number) - (b.order ?? b.number));
     const list = $('#study-list'); list.replaceChildren();
