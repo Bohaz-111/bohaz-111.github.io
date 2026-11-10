@@ -199,3 +199,9 @@ Object.assign(window.SITE_TRANSLATIONS["fr"], {"Machine Learning for Chemists": 
 Object.assign(window.SITE_TRANSLATIONS["ja"], {"Machine Learning for Chemists": "化学者のための機械学習", "Updated Machine Learning for Chemists": "「化学者のための機械学習」を更新"});
 Object.assign(window.SITE_TRANSLATIONS["zh"], {"Machine Learning for Chemists": "面向化学家的机器学习", "Updated Machine Learning for Chemists": "更新《面向化学家的机器学习》"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Machine Learning for Chemists": "面向化學家的機器學習", "Updated Machine Learning for Chemists": "更新《面向化學家的機器學習》"});
+
+// N23 atomic structure note.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Representation of atomic structure": "Représentation de la structure atomique", "Added Representation of atomic structure notes": "Ajout de la note sur la représentation de la structure atomique"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Representation of atomic structure": "原子構造の表現", "Added Representation of atomic structure notes": "原子構造の表現のノートを追加"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Representation of atomic structure": "原子结构的表示", "Added Representation of atomic structure notes": "添加原子结构的表示笔记"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Representation of atomic structure": "原子結構的表示", "Added Representation of atomic structure notes": "新增原子結構的表示筆記"});

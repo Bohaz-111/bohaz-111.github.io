@@ -215,6 +215,17 @@
     "url": "assets/notes/n22-laplace-eigenvalue-problem.pdf"
   },
   {
+    "number": 24,
+    "order": 23,
+    "label": "N23",
+    "title": "Representation of atomic structure",
+    "originalFilename": "N23_Representation_of_atoms.pdf",
+    "pages": 7,
+    "bytes": 160238,
+    "sha256": "ab3462f1adc7e89f4ab8625baaaa086a45d760f982a34c816fb4811e49305462",
+    "url": "assets/notes/n23-representation-of-atomic-structure.pdf"
+  },
+  {
     "number": 21,
     "label": "Thesis",
     "title": "Nuclear Quantum Effects on the Phonons of Solid Hydrogen",
@@ -223,6 +234,6 @@
     "bytes": 19567344,
     "sha256": "2e9969aa8a0fe9796791901548af7522772372e01f7f34e2078873f94a6264d7",
     "url": "assets/thesis/ph2.pdf",
-    "order": 23
+    "order": 24
   }
 ]
