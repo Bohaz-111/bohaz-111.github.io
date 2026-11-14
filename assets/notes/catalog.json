@@ -226,6 +226,17 @@
     "url": "assets/notes/n23-representation-of-atomic-structure.pdf"
   },
   {
+    "number": 25,
+    "order": 24,
+    "label": "N24",
+    "title": "Quantum time correlation functions",
+    "originalFilename": "N24_Kubo_Transformed_Time_Correlation_Function.pdf",
+    "pages": 17,
+    "bytes": 218400,
+    "sha256": "b574a2293ca6846945de8395e7f7baf84889d1a3072d78ff178d1f1e62b31c79",
+    "url": "assets/notes/n24-quantum-time-correlation-functions.pdf"
+  },
+  {
     "number": 21,
     "label": "Thesis",
     "title": "Nuclear Quantum Effects on the Phonons of Solid Hydrogen",
@@ -234,6 +245,6 @@
     "bytes": 19567344,
     "sha256": "2e9969aa8a0fe9796791901548af7522772372e01f7f34e2078873f94a6264d7",
     "url": "assets/thesis/ph2.pdf",
-    "order": 24
+    "order": 25
   }
 ]

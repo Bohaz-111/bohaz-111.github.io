@@ -205,3 +205,9 @@ Object.assign(window.SITE_TRANSLATIONS["fr"], {"Representation of atomic structu
 Object.assign(window.SITE_TRANSLATIONS["ja"], {"Representation of atomic structure": "原子構造の表現", "Added Representation of atomic structure notes": "原子構造の表現のノートを追加"});
 Object.assign(window.SITE_TRANSLATIONS["zh"], {"Representation of atomic structure": "原子结构的表示", "Added Representation of atomic structure notes": "添加原子结构的表示笔记"});
 Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Representation of atomic structure": "原子結構的表示", "Added Representation of atomic structure notes": "新增原子結構的表示筆記"});
+
+// N24 quantum time correlation functions note.
+Object.assign(window.SITE_TRANSLATIONS["fr"], {"Quantum time correlation functions": "Fonctions de corrélation temporelle quantiques", "Added Quantum time correlation functions notes": "Ajout de la note sur les fonctions de corrélation temporelle quantiques"});
+Object.assign(window.SITE_TRANSLATIONS["ja"], {"Quantum time correlation functions": "量子時間相関関数", "Added Quantum time correlation functions notes": "量子時間相関関数のノートを追加"});
+Object.assign(window.SITE_TRANSLATIONS["zh"], {"Quantum time correlation functions": "量子时间关联函数", "Added Quantum time correlation functions notes": "添加量子时间关联函数笔记"});
+Object.assign(window.SITE_TRANSLATIONS["zh-Hant"], {"Quantum time correlation functions": "量子時間關聯函數", "Added Quantum time correlation functions notes": "新增量子時間關聯函數筆記"});
